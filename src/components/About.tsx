@@ -17,13 +17,10 @@ const About = () => {
         <div class="col-lg-7">
           <h3 class="mb-3">Who I Am</h3>
           <p class="lead mb-4">
-            I'm a passionate full-stack developer with expertise in creating
-            responsive web applications using modern technologies.
+            Lorem Ipsum
           </p>
           <p class="mb-4">
-            With a strong foundation in both front-end and back-end development,
-            I bring ideas to life through clean code and intuitive user experiences.
-            I enjoy solving complex problems and continuously learning new skills.
+            Lorem Ipsum
           </p>
 
         </div>

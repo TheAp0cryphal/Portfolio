@@ -20,9 +20,9 @@ body {
 .gradient-background {
   min-height: 100vh;
   background: 
-    radial-gradient(circle at 0% 0%, rgba(11, 31, 54, 0.4) 0%, transparent 25%),
-    radial-gradient(circle at 100% 100%, rgba(11, 31, 54, 0.4) 0%, transparent 25%),
-    linear-gradient(-45deg, #ac8a2c, #000000, #564010, #ffffff);
+    radial-gradient(circle at 0% 0%, rgba(11, 31, 54, 0.6) 0%, transparent 25%),
+    radial-gradient(circle at 100% 100%, rgba(11, 31, 54, 0.6) 0%, transparent 25%),
+    linear-gradient(-45deg, $primary, #39c4c937, #564010a8, #ffffff);
   background-size: cover, cover, 400% 400%;
   animation: gradientAnimation 5s ease infinite;
 }
@@ -45,6 +45,20 @@ body {
   }
 }
 
+.marked-text {
+  color: $accent;
+}
+
+.name {
+  color: rgba($accent, 0.5);
+  text-shadow: 0.1px 0.1px 5px color.change($accent, $alpha: 0.6);
+}
+
+.navbar-name {
+  color: $accent;
+  text-shadow: 0.1px 0.1px 5px;
+}
+
 .hide-effect {
   position: relative;
   color: transparent;
@@ -60,25 +74,13 @@ body {
   background-position: 100% 0;
   -webkit-background-clip: text;
   background-clip: text;
-  transition: background-position 0.3s ease-in-out;
+  transition: background-position 0.05s ease-in;
 
   &:hover {
     background-position: 0 0;
+    text-shadow: 0 0 5px $accent;
+    transition: background-position 0.3s ease-in-out;
   }
-}
-
-.marked-text {
-  color: $accent;
-}
-
-.name {
-  color: rgba($accent, 0.5);
-  text-shadow: 0.1px 0.1px 5px color.change($accent, $alpha: 0.6);
-}
-
-.navbar-name {
-  color: $accent;
-  text-shadow: 0.1px 0.1px 5px;
 }
 
 .container {
@@ -97,7 +99,7 @@ body {
   }
 
   .nav-icon {
-    color: change-color($accent, $alpha: 1, $saturation: 100%);
+    color: color.change($accent, $alpha: 1, $saturation: 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,7 +134,7 @@ section {
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: background 0.1s ease;
+  transition: background 0.5s ease;
 
   &:nth-child(even) {
     background: rgba(0, 0, 0, 0.15);
@@ -143,8 +145,6 @@ section {
     background: rgba(0, 0, 0, 0.63);
   }
 }
-
-
 
 h2 {
   font-weight: 700;
