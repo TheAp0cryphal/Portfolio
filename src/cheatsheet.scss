@@ -1,0 +1,388 @@
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); 
+
+$primary:   #3b9c9b;  // Used for main brand text, .btn-primary background
+$secondary: #fffbfb88;  // General body text
+$accent:    #FFCB45;  // Accent color for nav link hover underline, highlights
+$light:     #0B1F36;  // Dark "background" color for <body> (naming kept for JS compatibility)
+$dark:      #0A1728;  // Extra dark shade (currently unused)
+$success:   #4caf50;  // Success state (green)
+
+// Base styles
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $secondary;
+  background-color: $light;
+  overflow-x: hidden;
+}
+
+// Dark, starry gradient background
+.gradient-background {
+  min-height: 100vh;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(11, 31, 54, 0.4) 0%, transparent 25%),
+    radial-gradient(circle at 100% 100%, rgba(11, 31, 54, 0.4) 0%, transparent 25%),
+    linear-gradient(-45deg, #ac8a2c, #000000, #564010, #ffffff);
+  background-size: cover, cover, 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hide-effect {
+  position: relative;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    $accent 0%,
+    $accent 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background-position 0.3s ease-in-out;
+
+  &:hover {
+    background-position: 0 0;
+  }
+}
+
+.marked-text {
+  color: $accent;
+}
+
+.name {
+  color: rgba($accent, 0.5);
+  text-shadow: 0.1px 0.1px 5px color.change($accent, $alpha: 0.6);
+}
+
+.navbar-name {
+  color: $accent;
+  text-shadow: 0.1px 0.1px 5px;
+}
+// Keep the rest of your existing code as is
+.container {
+  background-color: transparent !important;
+}
+
+// Navbar
+.navbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  box-shadow: 0 50px 15px rgba(0, 0, 0, 0.1);
+  
+  .navbar-brand {
+    font-weight: 700;
+    color: $primary;
+  }
+
+  .nav-link {
+    color: $secondary !important;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background-color: $accent;
+      transition: width 0.1s ease;
+    }
+    
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}
+
+// Section styles
+section {
+  position: relative;
+  padding: 120px 20px;
+  margin: 40px auto;
+  max-width: 1300px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.1s ease;
+
+  &:nth-child(even) {
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(12px);
+  }
+  
+  &:hover {
+    background: rgba(0, 0, 0, 0.63);
+  }
+}
+
+
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: $primary;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// Home animations
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// Cards
+.card {
+  // Subtle glass background with blur
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  color: $secondary;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  // Hover effect
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  // Image styling
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  // Card body
+  .card-body {
+    padding: 1.5rem;
+
+    // Titles in your brand's main color
+    .card-title {
+      color: $primary;
+      margin-bottom: 0.75rem;
+    }
+
+    // Standard text color
+    .card-text {
+      color: $secondary;
+    }
+  }
+}
+
+// Override for badges used as tags
+.badge.bg-primary {
+  background-color: $primary !important;
+  color: #fff !important;
+}
+
+// Buttons
+.btn {
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  
+  &.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+    box-shadow: 0 4px 15px rgba($primary, 0.3);
+    
+    &:hover {
+      background-color: color.scale($primary, $lightness: -10%);
+      box-shadow: 0 8px 20px rgba($primary, 0.4);
+    }
+  }
+  
+  &.btn-outline-primary {
+    color: $primary;
+    border-color: $primary;
+    
+    &:hover {
+      background-color: $primary;
+      box-shadow: 0 4px 15px rgba($primary, 0.3);
+    }
+  }
+}
+
+// Skills section
+.skill-item {
+  margin-bottom: 30px;
+  
+  .progress {
+    height: 10px !important;
+    border-radius: 20px;
+    background-color: rgba($primary, 0.1);
+    
+    .progress-bar {
+      background-color: $primary;
+      border-radius: 20px;
+    }
+  }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: $primary;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+  }
+  
+  .timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    
+    &:nth-child(odd) {
+      left: 0;
+    }
+    
+    &:nth-child(even) {
+      left: 50%;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 4px solid $primary;
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+    
+    &:nth-child(odd):after {
+      right: -10px;
+    }
+    
+    &:nth-child(even):after {
+      left: -10px;
+    }
+  }
+  
+  .timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .timeline-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: $primary;
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
+
+// Contact form
+.form-control {
+  border-radius: 6px;
+  border: 1px solid rgba($secondary, 0.1);
+  padding: 12px 15px;
+  transition: all 0.3s;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+    border-color: $primary;
+  }
+}
+
+// Footer
+footer {
+  background-color: $secondary !important;
+  color: white;
+  padding: 30px 0;
+  
+  .social-icons {
+    font-size: 1.5rem;
+    
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0 10px;
+      transition: color 0.3s;
+      
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .timeline:before {
+    left: 31px;
+  }
+  
+  .timeline .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .timeline .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  
+  .timeline .timeline-item:nth-child(odd):after,
+  .timeline .timeline-item:nth-child(even):after {
+    left: 22px;
+  }
+}
