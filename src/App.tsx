@@ -5,13 +5,15 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Timeline from "./components/Timeline";
 
+import { AiFillGithub, AiFillLinkedIn, AiFillMailIcon } from "./utils/IconUtil";
+
 const App = () => {
   return (
     <div class="gradient-background">
       <header>
         <nav class="navbar navbar-expand-lg fixed-top">
           <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#home">
               <span class="navbar-name">T<span class="hide-effect">anishk</span></span>
             </a>
             <button
@@ -21,8 +23,7 @@ const App = () => {
               data-bs-target="#navbarNav"
               aria-controls="navbarNav"
               aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
+              aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -38,6 +39,23 @@ const App = () => {
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                <li>
+                  <a class="nav-icon" href="https://www.github.com/TheAp0cryphal" data-bs-toggle="tooltip" title="GitHub">
+                    <AiFillGithub />
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-icon" href="https://www.linkedin.com/in/tanishks" data-bs-toggle="tooltip" title="LinkedIn">
+                    <AiFillLinkedIn />
+                  </a>
+                </li>
+                <li>
+                <a class="nav-icon" href="mailto:tanishk.sh@proton.me" data-bs-toggle="tooltip" title="mail: tanishk.sh@proton.me">
+                    <AiFillMailIcon />
+                  </a>
                 </li>
               </ul>
             </div>
