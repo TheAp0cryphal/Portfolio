@@ -1,7 +1,7 @@
 @use "sass:color";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); 
 
-$primary:   #3b9c9b;  // Used for main brand text, .btn-primary background
+$primary:   #f8f8f8;  // Used for main brand text, .btn-primary background
 $secondary: #fffbfb88;  // General body text
 $accent:    #FFCB45;  // Accent color for nav link hover underline, highlights
 $light:     #0B1F36;  // Dark "background" color for <body> (naming kept for JS compatibility)
@@ -10,9 +10,10 @@ $success:   #4caf50;  // Success state (green)
 
 // Base styles
 body {
+  zoom: 95%;
   font-family: 'Roboto', sans-serif;
   color: $secondary;
-  background-color: $light;
+  background-color: #020e18;
   overflow-x: hidden;
 }
 
@@ -22,27 +23,64 @@ body {
   background: 
     radial-gradient(circle at 0% 0%, rgba(11, 31, 54, 0.6) 0%, transparent 25%),
     radial-gradient(circle at 100% 100%, rgba(11, 31, 54, 0.6) 0%, transparent 25%),
-    linear-gradient(-45deg, $primary, #39c4c937, #564010a8, #ffffff);
+    linear-gradient(-150deg, #020e1802, #020e1894, #5f87a893, #c9d0d493);
   background-size: cover, cover, 400% 400%;
-  animation: gradientAnimation 5s ease infinite;
+  animation: gradientAnimation 5s ease-in-out infinite;
 }
+
+.gradient-background::before {
+  content: "";
+  position: absolute;
+  top: 700px;
+  left: 300px;
+  width: 2px;
+  height: 2px;
+  background: white;
+  /* Use a long list of random coordinates for star positions */
+  box-shadow: 
+    200px 300px white,
+    120px 80px white,
+    200px 150px white,
+    90px 500px white,
+    300px 60px white,
+    450px 220px white,
+    600px 80px white,
+    850px 40px white,
+    950px 150px white,
+    1100px 180px white,
+    1250px 80px white,
+    400px 450px white,
+    -100px 430px white,
+    20px 300px white,
+    -150px 130px white;
+  opacity: 0.8;
+  animation: twinkle 5s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+// Optional twinkle animation for the stars
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.6; }
+}
+
 
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
   }
-  25% {
-    background-position: 50% 50%;
-  }
   50% {
     background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 50%;
   }
   100% {
     background-position: 0% 50%;
   }
+}
+
+.black-text {
+  color: black !important
 }
 
 .marked-text {
@@ -78,8 +116,7 @@ body {
 
   &:hover {
     background-position: 0 0;
-    text-shadow: 0 0 5px $accent;
-    transition: background-position 0.3s ease-in-out;
+    transition: background-position 0.15s ease-in;
   }
 }
 

@@ -10,13 +10,13 @@ const Home = () => {
               class="img-fluid rounded-circle"
             />
           </div>
-          <h1 class="display-2 fw-bold mb-4 text-center">Hi, I'm <span class="name">Tanishk</span></h1>
+          <h1 class="display-4 fw-bold mb-4 text-center">Hi, I'm <span class="name">Tanishk</span></h1>
           <p class="lead mb-4 text-center">
             I am a <span class="marked-text">software generalist. </span>
             I am passionate about working with complex software at <span class="marked-text">scale.</span>
           </p>
           <div class="d-flex gap-3 justify-content-center">
-            <a href="#projects" class="btn btn-primary">
+            <a href="#projects" class="btn btn-primary black-text">
               View My Work
             </a>
             <a href="#contact" class="btn btn-outline-primary">

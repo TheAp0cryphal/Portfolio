@@ -1,5 +1,5 @@
 import { render } from "solid-js/web";
-import "./cheatsheet.scss"; // Import your SCSS file
+import "./cheatsheet.scss";
 import App from "./App";
 
 render(() => <App />, document.getElementById("root")!);
