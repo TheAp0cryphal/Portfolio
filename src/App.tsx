@@ -14,7 +14,7 @@ const App = () => {
         <header>
           <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-              <a class="navbar-brand" href="#home">
+              <a class="navbar-brand " href="#home">
                 <span class="navbar-name">T<span class="hide-effect">anishk</span></span>
               </a>
               <button

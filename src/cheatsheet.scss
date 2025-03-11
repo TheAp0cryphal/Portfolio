@@ -99,12 +99,10 @@ body {
 
 .name {
   color: rgba($accent, 0.5);
-  text-shadow: 0.1px 0.1px 5px color.change($accent, $alpha: 0.6);
 }
 
 .navbar-name {
   color: $accent;
-  text-shadow: 0.1px 0.1px 5px;
 }
 
 .hide-effect {
@@ -115,18 +113,17 @@ body {
     to right,
     $accent 0%,
     $accent 50%,
-    transparent 50%,
+    transparent 0%,
     transparent 100%
   );
   background-size: 200% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
   background-clip: text;
-  transition: background-position 0.05s ease-in;
+  transition: background-position 0.3s ease-in;
 
   &:hover {
     background-position: 0 0;
-    transition: background-position 0.15s ease-in;
   }
 }
 

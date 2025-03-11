@@ -54,12 +54,12 @@ const Projects = () => {
                   <div class="d-flex mb-3 flex-wrap">
                     <For each={project.tags}>
                       {(tag) => (
-                        <span class="badge bg-primary me-2 mb-2">{tag}</span>
+                        <span class="badge bg-secondary me-2 mb-2">{tag}</span>
                       )}
                     </For>
                   </div>
                   <div class="d-flex gap-2">
-                    <a href={project.demo} class="btn btn-primary btn-sm">
+                    <a href={project.demo} class="btn btn-light btn-sm">
                       Live Demo
                     </a>
                     <a href={project.code} class="btn btn-outline-primary btn-sm">
