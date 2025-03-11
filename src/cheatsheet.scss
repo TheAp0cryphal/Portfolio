@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); 
 
 $primary:   #f8f8f8;  // Used for main brand text, .btn-primary background
-$secondary: #fffbfb88;  // General body text
+$secondary: #e5f1fb;  // General body text
 $accent:    #FFCB45;  // Accent color for nav link hover underline, highlights
 $light:     #0B1F36;  // Dark "background" color for <body> (naming kept for JS compatibility)
 $dark:      #0A1728;  // Extra dark shade (currently unused)
@@ -13,7 +13,7 @@ body {
   zoom: 95%;
   font-family: 'Roboto', sans-serif;
   color: $secondary;
-  background-color: #020e18;
+  background-color: #030F18;
   overflow-x: hidden;
 }
 
@@ -21,40 +21,50 @@ body {
 .gradient-background {
   min-height: 100vh;
   background: 
-    radial-gradient(circle at 0% 0%, rgba(11, 31, 54, 0.6) 0%, transparent 25%),
+    radial-gradient(circle at 0% 0%, rgba(11, 31, 54, 0.959) 0%, transparent 25%),
     radial-gradient(circle at 100% 100%, rgba(11, 31, 54, 0.6) 0%, transparent 25%),
-    linear-gradient(-150deg, #020e1802, #020e1894, #5f87a893, #c9d0d493);
+    linear-gradient(-150deg,  #020e1802, #020e1894, #5f87a893, #c9d0d493);
   background-size: cover, cover, 400% 400%;
-  animation: gradientAnimation 5s ease-in-out infinite;
+  animation: gradientAnimation 10s ease-in-out infinite;
 }
 
 .gradient-background::before {
   content: "";
   position: absolute;
-  top: 700px;
-  left: 300px;
+  top: 450px;
+  left: 400px;
   width: 2px;
   height: 2px;
   background: white;
   /* Use a long list of random coordinates for star positions */
   box-shadow: 
-    200px 300px white,
-    120px 80px white,
-    200px 150px white,
-    90px 500px white,
-    300px 60px white,
-    450px 220px white,
-    600px 80px white,
-    850px 40px white,
-    950px 150px white,
-    1100px 180px white,
-    1250px 80px white,
-    400px 450px white,
-    -100px 430px white,
-    20px 300px white,
-    -150px 130px white;
+  200px 300px white,
+  120px 280px white,
+  200px 350px white,
+  90px 500px white,
+  300px 260px white,
+  450px 420px white,
+  600px 380px white,
+  850px 340px white,
+  950px 320px white,
+  1100px 350px white,
+  1250px 380px white,
+  400px 450px white,
+  -100px 430px white,
+  20px 300px white,
+  -150px 330px white,
+  50px 250px white,
+  700px 500px white,
+  1200px 600px white,
+  -200px 400px white,
+  1600px 500px white,
+  1350px 320px white,
+  -50px 700px white,
+  1800px 400px white,
+  1700px 600px white;
+
   opacity: 0.8;
-  animation: twinkle 5s ease-in-out infinite;
+  animation: twinkle 10s ease-in-out infinite;
   z-index: 1;
   pointer-events: none;
 }
@@ -161,6 +171,10 @@ body {
   }
 }
 
+.trees {
+  margin-top: -100px;
+}
+
 // Section styles
 section {
   position: relative;
@@ -189,15 +203,7 @@ h2 {
   position: relative;
   display: inline-block;
   
-  &:after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 3px;
-    background-color: $primary;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
+  &:hover {
   }
 }
 
