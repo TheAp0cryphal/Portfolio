@@ -198,6 +198,7 @@ section {
   }
 }
 
+
 h2 {
   font-weight: 700;
   margin-bottom: 40px;
@@ -206,6 +207,40 @@ h2 {
   
   &:hover {
   }
+}
+
+.carousel-control-next {
+  margin-right: -150px;
+}
+
+.left-enter {
+  transform: translateX(100%);
+}
+.left-enter-active {
+  transform: translateX(0%);
+  transition: transform 300ms ease-out;
+}
+.left-exit {
+  transform: translateX(0%);
+}
+.left-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-out;
+}
+/* Animation classes for "right" transition */
+.right-enter {
+  transform: translateX(-100%);
+}
+.right-enter-active {
+  transform: translateX(0%);
+  transition: transform 300ms ease-out;
+}
+.right-exit {
+  transform: translateX(0%);
+}
+.right-exit-active {
+  transform: translateX(100%);
+  transition: transform 300ms ease-out;
 }
 
 // Home animations
@@ -217,6 +252,7 @@ h2 {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 // Cards
 .card {
@@ -290,6 +326,15 @@ h2 {
       background-color: $primary;
       box-shadow: 0 4px 15px rgba($primary, 0.3);
     }
+  }
+}
+
+.nav-btn, arrow {
+  color: color.change($primary, $alpha: 0.6, $saturation: 100%);
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $primary;
   }
 }
 
