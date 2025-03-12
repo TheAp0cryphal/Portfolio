@@ -108,7 +108,7 @@ const Projects = () => {
       description:
         "The app allows you to browse and view information on available podcasts",
       image: "./assets/podcasts.png",
-      tags: ["Android", "Firebase", "Kotlin", "Java", "MVVM"],
+      tags: ["Android", "Kotlin"],
       demo: "#",
       code: "https://github.com/TheAp0cryphal/1Food",
     },
@@ -141,10 +141,33 @@ const Projects = () => {
       description:
         "This app allows users to track and save their running sessions, it is able to automatically identify the activity the user is engaged in using Weka Classifier based on the phone's gyroscopic data",
       image: "./assets/running_tracker.jpg",
-      tags: ["Android", "Java"],
+      tags: ["Android", "Kotlin"],
       demo: "#",
       code: "https://github.com/TheAp0cryphal/1Food",
-    }
+    },
+    {
+      category: "Full Stack",
+      title: "Task Manager",
+      subtitle: "Java based CRUD app with MongoDB",
+      description:
+        "This app utilizes MongoDB and Spring Boot to build a CRUD app with Database, Backend and Docker containerization",
+      image: "",
+      tags: ["Java", "SpringBoot", "MongoDB", "Docker"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/1Food",
+    },
+    {
+      category: "Full Stack",
+      title: "Task Manager",
+      subtitle: "Java based CRUD app with MongoDB",
+      description:
+        "This app utilizes MongoDB and Spring Boot to build a CRUD app with Database, Backend and Docker containerization",
+      image: "",
+      tags: ["Java", "SpringBoot", "MongoDB", "Docker"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/1Food",
+    },
+
   ];
 
   // Group projects by category
@@ -179,15 +202,15 @@ const Projects = () => {
         <h2>My Projects</h2>
       </div>
 
-      <div class="d-flex align-items-center justify-content-center mb-4">
-        <button onClick={prevCategory} class="nav-btn btn d-flex align-items-center">
-          <span class="mb-1 me-2 arrow">&larr;</span>
-          <span class="d-none d-md-inline">{prevCategoryName()}</span>
+      <div class="nav-grid">
+        <button onClick={prevCategory} class="nav-btn btn">
+          <span class="me-1 mb-1 arrow">&larr;</span>
+          <span class="nav-text">{prevCategoryName()}</span>
         </button>
-        <h3 class="px-5 mt-1"><b>{currentCategory()}</b></h3>
-        <button onClick={nextCategory} class="nav-btn btn d-flex align-items-center">
-          <span class="d-none d-md-inline me-2">{nextCategoryName()}</span>
-          <span class="arrow">&rarr;</span>
+        <h3 class="category-title"><b>{currentCategory()}</b></h3>
+        <button onClick={nextCategory} class="nav-btn btn">
+          <span class="mt-1 nav-text">{nextCategoryName()}</span>
+          <span class="mt-1 ms-1 arrow">&rarr;</span>
         </button>
       </div>
 

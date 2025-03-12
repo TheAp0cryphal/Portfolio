@@ -332,10 +332,32 @@ h2 {
 .nav-btn, arrow {
   color: color.change($primary, $alpha: 0.6, $saturation: 100%);
   transition: all 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px; /* Ensures button container is fixed */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   &:hover {
     color: $primary;
   }
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: 150px 400px 150px; /* Total width: 700px */
+  align-items: center;
+  justify-items: center;
+  width: 700px;        /* Explicit fixed width */
+  margin: 20px auto;      /* Centers the grid container horizontally */
+}
+
+.category-title {
+  width: 400px; /* Fixed space for the category title */
+  text-align: center;
+  margin: 0;
 }
 
 // Skills section
