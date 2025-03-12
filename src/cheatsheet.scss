@@ -352,10 +352,10 @@ h2 {
   justify-items: center;
   width: 100%;        /* Change to 100% for responsiveness */
   max-width: 700px;  /* Set a max width to prevent clipping */
-  margin: 20px auto; /* Centers the grid container horizontally */
+  margin: 0px auto; /* Centers the grid container horizontally */
   gap: 20px;         /* Add space between elements */
 
-  @media (max-width: 576px) {
+  @media (max-width: 730px) {
     grid-template-columns: 1fr; /* Stack elements in a single column */
     flex-direction: column; /* Ensure vertical stacking */
     align-items: center; /* Center align items */
