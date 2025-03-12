@@ -59,6 +59,17 @@ const Projects = () => {
     },
     {
       category: "AI/ML Development",
+      title: "Auto-Encoders",
+      subtitle: "Dimensionality Reduction | Variation Auto-Encoders",
+      description:
+        "Created a set of autoencoder models, including both vanilla and variational versions, using simple one-layer architectures with ReLU activations. The goal is to explore unsupervised learning by compressing data into a compact representation and then reconstructing it",
+      image: "./assets/autoencoder.png",
+      tags: ["React", "API", "CSS"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/ML---Clustering-Unknown-Facial-Data-Action-Units",
+    },
+    {
+      category: "AI/ML Development",
       title: "Data Clustering Unlabelled Data",
       subtitle: "PCA | Dimensionality Reduction | KMeans",
       description:
@@ -123,6 +134,17 @@ const Projects = () => {
       demo: "#",
       code: "https://github.com/TheAp0cryphal/1Food",
     },
+    {
+      category: "Mobile Development",
+      title: "My Running Tracker",
+      subtitle: "A running tracking app",
+      description:
+        "This app allows users to track and save their running sessions, it is able to automatically identify the activity the user is engaged in using Weka Classifier based on the phone's gyroscopic data",
+      image: "./assets/running_tracker.jpg",
+      tags: ["Android", "Java"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/1Food",
+    }
   ];
 
   // Group projects by category
@@ -159,7 +181,7 @@ const Projects = () => {
 
       <div class="d-flex align-items-center justify-content-center mb-4">
         <button onClick={prevCategory} class="nav-btn btn d-flex align-items-center">
-          <span class="me-2 arrow">&larr;</span>
+          <span class="mb-1 me-2 arrow">&larr;</span>
           <span class="d-none d-md-inline">{prevCategoryName()}</span>
         </button>
         <h3 class="px-5 mt-1"><b>{currentCategory()}</b></h3>

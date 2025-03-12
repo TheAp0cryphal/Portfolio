@@ -331,7 +331,7 @@ h2 {
 
 .nav-btn, arrow {
   color: color.change($primary, $alpha: 0.6, $saturation: 100%);
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 
   &:hover {
     color: $primary;
