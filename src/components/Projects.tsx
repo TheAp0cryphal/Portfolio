@@ -146,7 +146,29 @@ const Projects = () => {
       code: "https://github.com/TheAp0cryphal/1Food",
     },
     {
-      category: "Full Stack",
+      category: "Web / Backend",
+      title: "Hoggett",
+      subtitle: "An animal tracking web app",
+      description:
+        "This web application allows a farmer to track his various types of pigs. If he loses a pig, and it is found somewhere else in the city, finders can share the coordinates directly with the farmer on MapBox as a marker location. The list reloads without refetching the page",
+      image: "./assets/hogget.png",
+      tags: ["TypeScript", "NPM", "Node.js", "MapBox", "MVC", "HTML", "CSS", "Bootstrap 5"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/Hoggett",
+    },
+    {
+      category: "Web / Backend",
+      title: "Music Industry Management System",
+      subtitle: "Relational Database in MSSQL",
+      description:
+        "MusicDB is a MSSQL database application designed to manage the complex relationships in the music industry ecosystem. The system tracks the many-to-many relationships between musicians and artists (bands/groups), maintains song catalogs with proper attribution, and enforces business rules that reflect real-world music industry practices.",
+      image: "./assets/database.png",
+      tags: ["SQL", "MS SQL Server"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/1Food",
+    },
+    {
+      category: "Web / Backend",
       title: "Task Manager",
       subtitle: "Java based CRUD app with MongoDB",
       description:
@@ -157,17 +179,27 @@ const Projects = () => {
       code: "https://github.com/TheAp0cryphal/1Food",
     },
     {
-      category: "Full Stack",
-      title: "Task Manager",
-      subtitle: "Java based CRUD app with MongoDB",
+      category: "Systems / Low Level",
+      title: "Reconstructing 3D from 2D source",
+      subtitle: "Stereo Reconstruction",
       description:
-        "This app utilizes MongoDB and Spring Boot to build a CRUD app with Database, Backend and Docker containerization",
-      image: "",
-      tags: ["Java", "SpringBoot", "MongoDB", "Docker"],
+        "No Libraries, only pure math! \n Theory: https://w.wiki/DQ8e \n\n I perform some tricks to get the ability to transform an airplane from a 2D image to a 3D representation. (Understanding the \"depth\" of the 2D image. Pun intended)",
+      image: "./assets/stereo_reconstruction.jpeg",
+      tags: ["MATLAB"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/1Food",
+      code: "https://github.com/TheAp0cryphal/EdgeDetection---Depth-Analysis---Creating-3D-Model-of-a-2D-source",
     },
-
+    {
+      category: "Systems / Low Level",
+      title: "Augmented Reality Filter",
+      subtitle: "Real-time Superimposition",
+      description:
+        "No libraries were used, only pure math! \n\nWe take a video with constantly changing perspectives, learning where the edge's for the book are and what are it's dimensions to successfully impose a live video over it. \nTechniques: Brief, Surf, RANSAC, Image Stitching",
+      image: "https://user-images.githubusercontent.com/70075553/180334468-c0a89cc5-c140-4a47-b5f9-1883fc1eb785.mp4",
+      tags: ["MATLAB"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/AugmentedRealityFilter---Imposing-Augmentation-on-Book-Cover",
+    }  
   ];
 
   // Group projects by category
@@ -221,7 +253,13 @@ const Projects = () => {
             <div class="col-md-6 col-lg-4">
               <div class="card h-100 shadow-sm">
                 {project.image && (
-                  <img src={project.image} class="card-img-top" alt={project.title} />
+                  project.image.endsWith('.mp4') ? (
+                    <video class="card-img-top" controls>
+                      <source src={project.image} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img src={project.image} class="card-img-top" alt={project.title} />
+                  )
                 )}
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title"><b>{project.title}</b></h5>
