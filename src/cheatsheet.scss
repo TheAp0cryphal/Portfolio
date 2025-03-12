@@ -198,7 +198,6 @@ section {
   }
 }
 
-
 h2 {
   font-weight: 700;
   margin-bottom: 40px;
@@ -329,16 +328,17 @@ h2 {
   }
 }
 
-.nav-btn, arrow {
+.nav-btn {
   color: color.change($primary, $alpha: 0.6, $saturation: 100%);
   transition: all 0.1s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px; /* Ensures button container is fixed */
-  overflow: hidden;
+  width: 150px; /* Ensures button container is fixed */
   white-space: nowrap;
   text-overflow: ellipsis;
+  border: none; /* Remove border */
+  outline: none; /* Remove outline on focus */
 
   &:hover {
     color: $primary;
@@ -350,14 +350,30 @@ h2 {
   grid-template-columns: 150px 400px 150px; /* Total width: 700px */
   align-items: center;
   justify-items: center;
-  width: 700px;        /* Explicit fixed width */
-  margin: 20px auto;      /* Centers the grid container horizontally */
+  width: 100%;        /* Change to 100% for responsiveness */
+  max-width: 700px;  /* Set a max width to prevent clipping */
+  margin: 20px auto; /* Centers the grid container horizontally */
+  gap: 20px;         /* Add space between elements */
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr; /* Stack elements in a single column */
+    flex-direction: column; /* Ensure vertical stacking */
+    align-items: center; /* Center align items */
+    gap: 20px;         /* Add space between stacked elements */
+  }
 }
 
 .category-title {
   width: 400px; /* Fixed space for the category title */
   text-align: center;
   margin: 0;
+}
+
+@media (max-width: 576px) {
+  .nav-grid {
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center;
+  }
 }
 
 // Skills section

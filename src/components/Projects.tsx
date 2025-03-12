@@ -202,15 +202,15 @@ const Projects = () => {
         <h2>My Projects</h2>
       </div>
 
-      <div class="nav-grid">
+      <div class="nav-grid text-center mb-5 justify-content-center align-items-center">
         <button onClick={prevCategory} class="nav-btn btn">
-          <span class="me-1 mb-1 arrow">&larr;</span>
+          <span class="me-2 mb-1 arrow" style="font-size: 2.5em;">&lt;</span>
           <span class="nav-text">{prevCategoryName()}</span>
         </button>
-        <h3 class="category-title"><b>{currentCategory()}</b></h3>
-        <button onClick={nextCategory} class="nav-btn btn">
-          <span class="mt-1 nav-text">{nextCategoryName()}</span>
-          <span class="mt-1 ms-1 arrow">&rarr;</span>
+        <h3 class="category-title flex-grow-1 text-center"><b>{currentCategory()}</b></h3>
+        <button onClick={nextCategory} class="nav-btn btn next-category">
+          <span class="nav-text">{nextCategoryName()}</span>
+          <span class="ms-2 arrow" style="font-size: 2.5em;">&gt;</span>
         </button>
       </div>
 
