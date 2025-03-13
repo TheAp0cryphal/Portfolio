@@ -9,9 +9,9 @@ const Projects = () => {
       description:
         "A Web App with Multimodal AI that infers human emotions based on facial expressions and audio activations",
       image: "./assets/eMosh.png",
-      tags: ["Flask", "Node.js", "FFmpeg", "TensorFlow"],
+      tags: ["Python", "Flask", "Node.js", "FFmpeg", "PyTorch"],
       demo: "#",
-      code: "#",
+      code: "https://github.com/TheAp0cryphal/eMosh-Emotional-Multimodality-Optical-Auditory-Synergy-Hub",
     },
     {
       category: "AI/ML Development",
@@ -20,7 +20,7 @@ const Projects = () => {
       description:
         "A productivity application for teams to manage projects and tasks.",
       image: "./assets/Airplane.png",
-      tags: ["React", "Firebase", "Material UI"],
+      tags: ["Python", "PyTorch"],
       demo: "#",
       code: "https://github.com/TheAp0cryphal/CNN-Airplane-Detection-in-Google-Maps-CIFAR",
     },
@@ -29,11 +29,11 @@ const Projects = () => {
       title: "Crypto Price Predictor",
       subtitle: "Sentiment Analysis | Web Scraping",
       description:
-        "We perform sentiment analysis on reddit comments about crypto. We merge it with fear and greed index to determine the upcoming crypto price and how close the currencies are intertwined.",
+        "We perform sentiment analysis on reddit comments about crypto. We merge it with fear and greed index to determine the upcoming crypto price and how close the currencies are intertwined. A comparative study of multiple models.\n\n Models Used: Random Forest Regression, Gradient Boosting Regression, Linear Regression, Random Forest Classification, KNN, Naive Bayes",
       image: "./assets/crypto.png",
-      tags: ["HTML", "CSS", "JavaScript"],
+      tags: ["Python", "Seaborn", "Scikit-learn", "Keras", "Spark", "NLTK"],
       demo: "#",
-      code: "#",
+      code: "https://github.com/TheAp0cryphal/CryptoPricePredictor",
     },
     {
       category: "AI/ML Development",
@@ -42,9 +42,9 @@ const Projects = () => {
       description:
         "A compartive study of multiple models including Support Vector Machines, Decision Trees, Ensemble Voting and Random Forest",
       image: "./assets/whatthedogdoin.png",
-      tags: ["React", "API", "CSS"],
+      tags: ["Python", "Jupyter", "Keras"],
       demo: "#",
-      code: "#",
+      code: "https://github.com/TheAp0cryphal/DeepDreamify-CMPT310",
     },
     {
       category: "AI/ML Development",
@@ -53,9 +53,9 @@ const Projects = () => {
       description:
         "We train an AI on the FER2013 database for emotional inference. We then try to predict phoebe's emotions using snapshots from the show F.R.I.E.N.D.S",
       image: "./assets/phoebe.png",
-      tags: ["React", "API", "CSS"],
+      tags: ["Python", "Google Colab"],
       demo: "#",
-      code: "#",
+      code: "https://github.com/TheAp0cryphal/ML-FER2013-Dataset-Emotional-Inference",
     },
     {
       category: "AI/ML Development",
@@ -64,9 +64,9 @@ const Projects = () => {
       description:
         "Created a set of autoencoder models, including both vanilla and variational versions, using simple one-layer architectures with ReLU activations. The goal is to explore unsupervised learning by compressing data into a compact representation and then reconstructing it",
       image: "./assets/autoencoder.png",
-      tags: ["React", "API", "CSS"],
+      tags: ["Python"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/ML---Clustering-Unknown-Facial-Data-Action-Units",
+      code: "",
     },
     {
       category: "AI/ML Development",
@@ -75,9 +75,9 @@ const Projects = () => {
       description:
         "Data Clustering of unknown images to identify existing number of classes of data that closely resemble each other.",
       image: "./assets/cluster.png",
-      tags: ["React", "API", "CSS"],
+      tags: ["Python"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/ML---Clustering-Unknown-Facial-Data-Action-Units",
+      code: "https://github.com/TheAp0cryphal/ML---Clustering-Unknown-Facial-Data-Action-Units-",
     },
     {
       category: "AI/ML Development",
@@ -86,9 +86,9 @@ const Projects = () => {
       description:
         "A model to recognize handwritten digits, trained on the MNIST dataset",
       image: "./assets/mnist.jpg",
-      tags: ["React", "API", "CSS"],
+      tags: ["MATLAB"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/ML---Clustering-Unknown-Facial-Data-Action-Units",
+      code: "https://github.com/TheAp0cryphal/CNN-MNIST-dataset-",
     },
     {
       category: "Mobile Development",
@@ -110,7 +110,7 @@ const Projects = () => {
       image: "./assets/podcasts.png",
       tags: ["Android", "Kotlin"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/1Food",
+      code: "https://github.com/TheAp0cryphal/PodcastApp",
     },
     {
       category: "Mobile Development",
@@ -121,7 +121,7 @@ const Projects = () => {
       image: "./assets/mineseeker.png",
       tags: ["Android", "Java"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/1Food",
+      code: "https://github.com/TheAp0cryphal/MineSeeker",
     },
     {
       category: "Mobile Development",
@@ -132,7 +132,7 @@ const Projects = () => {
       image: "./assets/game-over.png",
       tags: ["Android", "Java"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/1Food",
+      code: "https://github.com/TheAp0cryphal/SFU-Hackathon-Game-Over-",
     },
     {
       category: "Mobile Development",
@@ -143,7 +143,7 @@ const Projects = () => {
       image: "./assets/running_tracker.jpg",
       tags: ["Android", "Kotlin"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/1Food",
+      code: "https://github.com/TheAp0cryphal/MyRunningTracker",
     },
     {
       category: "Web / Backend",
@@ -165,7 +165,7 @@ const Projects = () => {
       image: "./assets/database.png",
       tags: ["SQL", "MS SQL Server"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/1Food",
+      code: "https://github.com/TheAp0cryphal/Music-Artist-Label-Relational-Databasing-MSSQL",
     },
     {
       category: "Web / Backend",
@@ -176,7 +176,7 @@ const Projects = () => {
       image: "",
       tags: ["Java", "SpringBoot", "MongoDB", "Docker"],
       demo: "#",
-      code: "https://github.com/TheAp0cryphal/1Food",
+      code: "https://github.com/TheAp0cryphal/TaskManager",
     },
     {
       category: "Systems / Low Level",
@@ -194,12 +194,45 @@ const Projects = () => {
       title: "Augmented Reality Filter",
       subtitle: "Real-time Superimposition",
       description:
-        "No libraries were used, only pure math! \n\nWe take a video with constantly changing perspectives, learning where the edge's for the book are and what are it's dimensions to successfully impose a live video over it. \nTechniques: Brief, Surf, RANSAC, Image Stitching",
-      image: "https://user-images.githubusercontent.com/70075553/180334468-c0a89cc5-c140-4a47-b5f9-1883fc1eb785.mp4",
-      tags: ["MATLAB"],
+        "No libraries were used, only pure math! \n\nWe take a video with constantly changing perspectives, learning where the edge's for the book are and what are it's dimensions to successfully impose a live video over it.",
+      image: "https://user-images.githubusercontent.com/70075553/180334483-7aa4f375-1e79-49ed-a960-652f46076de6.mp4",
+      tags: ["MATLAB", "Brief", "Surf", "RANSAC", "Image Stitching"],
       demo: "#",
       code: "https://github.com/TheAp0cryphal/AugmentedRealityFilter---Imposing-Augmentation-on-Book-Cover",
-    }  
+    },
+    {
+      category: "Systems / Low Level",
+      title: "Multi-Threaded UDP Chat",
+      subtitle: "Implementation for Real-Time Messaging over IPv4",
+      description:
+        "communicate over a network using UDP. It employs multiple threads to handle simultaneous tasks—reading user input, sending messages, receiving messages, and displaying received messages. The program also integrates a simple encryption mechanism and custom list data structures to manage message buffers, showcasing an effective combination of socket programming, threading, and data structure manipulation.",
+      image: "./assets/udp.png",
+      tags: ["C"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/SSHSocketChat-Terminal",
+    },
+    {
+      category: "Systems / Low Level",
+      title: "Custom 'ls' Command Implementation",
+      subtitle: "Filesystem Navigation and Inode Exploration",
+      description:
+        "A custom re-creation of the classic Linux ls command, built using C. It showcases expertise in low-level filesystem operations by reading inode data, traversing directories recursively, and sorting directory entries. The application supports several command-line options for enhanced functionality",
+      image: "",
+      tags: ["C"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/CustomLSLinux",
+    },
+    {
+      category: "Systems / Low Level",
+      title: "PID Traversal",
+      subtitle: "System Process and Resource Analyzer",
+      description:
+        "A set of three concise C programs that traverse the /proc filesystem. One module extracts and displays PIDs and their command names, another computes memory utilization from /proc/meminfo, and the third retrieves kernel and OS version details.",
+      image: "",
+      tags: ["C"],
+      demo: "#",
+      code: "https://github.com/TheAp0cryphal/LinuxInternalPIDtraversal",
+    },
   ];
 
   // Group projects by category
@@ -254,7 +287,7 @@ const Projects = () => {
               <div class="card h-100 shadow-sm">
                 {project.image && (
                   project.image.endsWith('.mp4') ? (
-                    <video class="card-img-top" controls>
+                    <video class="card-img-top" controls autoplay>
                       <source src={project.image} type="video/mp4" />
                     </video>
                   ) : (
