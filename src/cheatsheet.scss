@@ -179,9 +179,9 @@ body {
 // Section styles
 section {
   position: relative;
-  padding: 120px 20px;
-  margin: 40px auto;
-  max-width: 1300px;
+  padding: 60px 0px;
+  margin: 80px auto;
+  max-width: 1800px;
   border-radius: 12px;
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
@@ -293,7 +293,6 @@ h2 {
   }
 }
 
-// Override for badges used as tags
 .badge.bg-primary {
   background-color: $primary !important;
   color: #fff !important;
@@ -326,6 +325,10 @@ h2 {
       box-shadow: 0 4px 15px rgba($primary, 0.3);
     }
   }
+}
+
+.container-fluid {
+  padding: 0px 100px;
 }
 
 .nav-btn {

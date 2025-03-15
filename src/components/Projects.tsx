@@ -17,7 +17,7 @@ const Projects = () => {
       ),
       image: "./assets/eMosh.png",
       tags: ["Python", "Flask", "Node.js", "FFmpeg", "PyTorch"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/eMosh-Emotional-Multimodality-Optical-Auditory-Synergy-Hub",
     },
     {
@@ -33,7 +33,7 @@ const Projects = () => {
       ),
       image: "./assets/Airplane.png",
       tags: ["Python", "PyTorch"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/CNN-Airplane-Detection-in-Google-Maps-CIFAR",
     },
     {
@@ -49,7 +49,7 @@ const Projects = () => {
       ),
       image: "./assets/crypto.png",
       tags: ["Python", "Seaborn", "Scikit-learn", "Keras", "Spark", "NLTK"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/CryptoPricePredictor",
     },
     {
@@ -63,7 +63,7 @@ const Projects = () => {
       ),
       image: "./assets/whatthedogdoin.png",
       tags: ["Python", "Jupyter", "Keras"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/DeepDreamify-CMPT310",
     },
     {
@@ -77,7 +77,7 @@ const Projects = () => {
       ),
       image: "./assets/phoebe.png",
       tags: ["Python", "Google Colab"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/ML-FER2013-Dataset-Emotional-Inference",
     },
     {
@@ -91,7 +91,7 @@ const Projects = () => {
       ),
       image: "./assets/autoencoder.png",
       tags: ["Python"],
-      demo: "#",
+      demo: "",
       code: "",
     },
     {
@@ -105,7 +105,7 @@ const Projects = () => {
       ),
       image: "./assets/cluster.png",
       tags: ["Python"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/ML---Clustering-Unknown-Facial-Data-Action-Units-",
     },
     {
@@ -119,7 +119,7 @@ const Projects = () => {
       ),
       image: "./assets/mnist.jpg",
       tags: ["MATLAB"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/CNN-MNIST-dataset-",
     },
     {
@@ -140,7 +140,7 @@ const Projects = () => {
       ),
       image: "./assets/1Food.png",
       tags: ["Android", "Firebase", "Kotlin", "Java", "MVVM"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/1Food",
     },
     {
@@ -154,7 +154,7 @@ const Projects = () => {
       ),
       image: "./assets/podcasts.png",
       tags: ["Android", "Kotlin"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/PodcastApp",
     },
     {
@@ -168,7 +168,7 @@ const Projects = () => {
       ),
       image: "./assets/mineseeker.png",
       tags: ["Android", "Java"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/MineSeeker",
     },
     {
@@ -182,7 +182,7 @@ const Projects = () => {
       ),
       image: "./assets/game-over.png",
       tags: ["Android", "Java"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/SFU-Hackathon-Game-Over-",
     },
     {
@@ -196,7 +196,7 @@ const Projects = () => {
       ),
       image: "./assets/running_tracker.jpg",
       tags: ["Android", "Kotlin"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/MyRunningTracker",
     },
     {
@@ -210,7 +210,7 @@ const Projects = () => {
       ),
       image: "./assets/hogget.png",
       tags: ["TypeScript", "NPM", "Node.js", "MapBox", "MVC", "HTML", "CSS", "Bootstrap 5"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/Hoggett",
     },
     {
@@ -224,7 +224,7 @@ const Projects = () => {
       ),
       image: "./assets/database.png",
       tags: ["SQL", "MS SQL Server"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/Music-Artist-Label-Relational-Databasing-MSSQL",
     },
     {
@@ -238,7 +238,7 @@ const Projects = () => {
       ),
       image: "",
       tags: ["Java", "SpringBoot", "MongoDB", "Docker"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/TaskManager",
     },
     {
@@ -255,7 +255,7 @@ const Projects = () => {
       ),
       image: "./assets/stereo_reconstruction.jpeg",
       tags: ["MATLAB"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/EdgeDetection---Depth-Analysis---Creating-3D-Model-of-a-2D-source",
     },
     {
@@ -271,7 +271,7 @@ const Projects = () => {
       ),
       image: "https://user-images.githubusercontent.com/70075553/180334483-7aa4f375-1e79-49ed-a960-652f46076de6.mp4",
       tags: ["MATLAB", "Brief", "Surf", "RANSAC", "Image Stitching"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/AugmentedRealityFilter---Imposing-Augmentation-on-Book-Cover",
     },
     {
@@ -285,7 +285,7 @@ const Projects = () => {
       ),
       image: "./assets/udp.png",
       tags: ["C"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/SSHSocketChat-Terminal",
     },
     {
@@ -299,7 +299,7 @@ const Projects = () => {
       ),
       image: "",
       tags: ["C"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/CustomLSLinux",
     },
     {
@@ -313,7 +313,7 @@ const Projects = () => {
       ),
       image: "",
       tags: ["C"],
-      demo: "#",
+      demo: "",
       code: "https://github.com/TheAp0cryphal/LinuxInternalPIDtraversal",
     },
   ];
@@ -327,26 +327,21 @@ const Projects = () => {
     return acc;
   }, {});
 
-  // Create a categories array from the keys of groupedProjects
   const categories = Object.keys(groupedProjects);
-
-  // Set up a signal for the current category index
   const [currentCategoryIndex, setCurrentCategoryIndex] = createSignal(0);
 
-  const nextCategory = () =>
-    setCurrentCategoryIndex((prev) => (prev + 1) % categories.length);
-  const prevCategory = () =>
-    setCurrentCategoryIndex((prev) => (prev - 1 + categories.length) % categories.length);
+  const updateCategoryIndex = (offset) => 
+    setCurrentCategoryIndex((prev) => (prev + offset + categories.length) % categories.length);
 
   const currentCategory = () => categories[currentCategoryIndex()];
-  const prevCategoryName = () =>
-    categories[(currentCategoryIndex() - 1 + categories.length) % categories.length];
-  const nextCategoryName = () =>
-    categories[(currentCategoryIndex() + 1) % categories.length];
+  const prevCategoryName = () => categories[(currentCategoryIndex() - 1 + categories.length) % categories.length];
+  const nextCategoryName = () => categories[(currentCategoryIndex() + 1) % categories.length];
+  const nextCategory = () => updateCategoryIndex(1);
+  const prevCategory = () => updateCategoryIndex(-1);
 
   return (
-    <div class="container my-5">
-      <div class="text-center mb-5">
+    <div class="container-fluid">
+      <div class="text-center mb-2">
         <h2>Software I've Built</h2>
       </div>
 
@@ -374,7 +369,7 @@ const Projects = () => {
                       <source src={project.image} type="video/mp4" />
                     </video>
                   ) : (
-                    <img src={project.image} class="card-img-top" alt={project.title} />
+                    <img src={project.image} class="card-img-top" alt={project.title} style={{height: '300px'}} />
                   )
                 )}
                 <div class="card-body d-flex flex-column">
@@ -385,16 +380,18 @@ const Projects = () => {
                   <p class="card-text flex-grow-3">
                     {project.description}
                   </p>
-                  <div class="d-flex flex-wrap gap-2 mb-3">
+                  <div class="d-flex flex-wrap gap-1 mb-3">
                     <For each={project.tags}>
                       {(tag) => <span class="badge bg-secondary">{tag}</span>}
                     </For>
                   </div>
                   <div class="d-flex gap-2 mt-auto">
-                    <a href={project.demo} class="btn btn-light btn-sm">
-                      Live Demo
-                    </a>
-                    <a href={project.code} class="btn btn-outline-primary btn-sm">
+                    {project.demo && (
+                      <a href={project.demo} class="btn btn-outline-primary btn-sm">
+                        Live Demo
+                      </a>
+                    )}
+                    <a href={project.code} class="btn btn-light btn-sm">
                       View Code
                     </a>
                   </div>
