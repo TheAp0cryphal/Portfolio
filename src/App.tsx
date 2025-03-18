@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Timeline from "./components/Timeline";
 
 import { AiFillGithub, AiFillLinkedIn, AiFillMailIcon } from "./utils/IconUtil";
+import Skills from "./components/Skills";
 
 const App = () => {
   return (
@@ -73,11 +74,11 @@ const App = () => {
         <section id="about">
           <About />
         </section>
-        <section id="experience">
-          <Timeline />
-        </section>
         <section id="projects">
           <Projects />
+        </section>
+        <section id="experience">
+          <Timeline />
         </section>
         <section id="contact">
           <Contact />

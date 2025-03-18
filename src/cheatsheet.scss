@@ -31,7 +31,7 @@ body {
 .gradient-background::before {
   content: "";
   position: absolute;
-  top: 450px;
+  top: 500px;
   left: 400px;
   width: 2px;
   height: 2px;
@@ -176,12 +176,16 @@ body {
   margin-top: -100px;
 }
 
+.description-item {
+  margin: 1rem 0;
+}
+
 // Section styles
 section {
   position: relative;
   padding: 60px 0px;
   margin: 80px auto;
-  max-width: 1850px;
+  max-width: 1550px;
   border-radius: 12px;
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
@@ -430,8 +434,8 @@ h2 {
       position: absolute;
       width: 20px;
       height: 20px;
-      background-color: white;
-      border: 4px solid $primary;
+      background-color: black;
+      border: 4px solid $accent;
       border-radius: 50%;
       top: 15px;
       z-index: 1;
@@ -448,7 +452,7 @@ h2 {
   
   .timeline-content {
     padding: 20px 30px;
-    background-color: white;
+    background-color: color.change($dark, $lightness: 10%, $alpha: 0.6);
     position: relative;
     border-radius: 6px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -458,7 +462,7 @@ h2 {
     display: inline-block;
     padding: 5px 10px;
     background-color: $primary;
-    color: white;
+    color: $light;
     border-radius: 4px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -478,25 +482,8 @@ h2 {
   }
 }
 
-// Footer
-footer {
-  background-color: $secondary !important;
-  color: white;
-  padding: 30px 0;
-  
-  .social-icons {
-    font-size: 1.5rem;
-    
-    a {
-      color: rgba(255, 255, 255, 0.7);
-      margin: 0 10px;
-      transition: color 0.3s;
-      
-      &:hover {
-        color: white;
-      }
-    }
-  }
+.footer {
+  background-color: color.change($accent, $lightness: 60%);
 }
 
 // Responsive adjustments
@@ -518,5 +505,17 @@ footer {
   .timeline .timeline-item:nth-child(odd):after,
   .timeline .timeline-item:nth-child(even):after {
     left: 22px;
+  }
+}
+
+.image-container {
+  img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
   }
 }

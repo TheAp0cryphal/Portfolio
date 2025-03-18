@@ -1,10 +1,20 @@
 const Contact = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const message = e.target.message.value;
+        window.location.href = `mailto:tanishk.sh@proton.me?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${name} (${email})`;
+    };
+
     return (
       <div class="container">
-        <h2 class="text-center mb-4">Get in Touch</h2>
+        <div class="text-center mb-2">
+          <h2>Get in Touch</h2>
+        </div>
         <div class="row justify-content-center">
           <div class="col-md-8">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input
@@ -32,8 +42,8 @@ const Contact = () => {
                   placeholder="Your Message"
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">
-                Send Message
+              <button type="submit" class="btn btn-outline-warning mt-2">
+                Send via Email
               </button>
             </form>
           </div>
