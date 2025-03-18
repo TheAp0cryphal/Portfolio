@@ -42,7 +42,8 @@ const Projects = () => {
       subtitle: "Sentiment Analysis | Web Scraping",
       description: (
         <>
-          We perform sentiment analysis on reddit comments about crypto. We merge it with fear and greed index to determine the upcoming crypto price and how close the currencies are intertwined. A comparative study of multiple models.
+          We perform sentiment analysis on reddit comments about crypto. We merge it with fear and greed index to determine the upcoming crypto price and 
+          how close the currencies are intertwined. A comparative study of multiple models.
           <br /><br />
           Models Used: Random Forest Regression, Gradient Boosting Regression, Linear Regression, Random Forest Classification, KNN, Naive Bayes
         </>
@@ -86,7 +87,8 @@ const Projects = () => {
       subtitle: "Dimensionality Reduction | Variation Auto-Encoders",
       description: (
         <>
-          Created a set of autoencoder models, including both vanilla and variational versions, using simple one-layer architectures with ReLU activations. The goal is to explore unsupervised learning by compressing data into a compact representation and then reconstructing it
+          Created a set of autoencoder models, including both vanilla and variational versions, using simple one-layer architectures with ReLU activations. 
+          The goal is to explore unsupervised learning by compressing data into a compact representation and then reconstructing it
         </>
       ),
       image: "./assets/autoencoder.png",
@@ -177,7 +179,8 @@ const Projects = () => {
       subtitle: "6 Hour SFU Hackathon",
       description: (
         <>
-          A text based game that lets your traverse the map via text. The tasks involve making decision in certain situations. Making the right decision will allow you to proceed to finish all 5 tasks, a wrong choice, however, restarts the game
+          A text based game that lets your traverse the map via text. The tasks involve making decision in certain situations. 
+          Making the right decision will allow you to proceed to finish all 5 tasks, a wrong choice, however, restarts the game
         </>
       ),
       image: "./assets/game-over.png",
@@ -191,7 +194,8 @@ const Projects = () => {
       subtitle: "A running tracking app",
       description: (
         <>
-          This app allows users to track and save their running sessions, it is able to automatically identify the activity the user is engaged in using Weka Classifier based on the phone's gyroscopic data
+          This app allows users to track and save their running sessions, it is able to automatically identify the activity the user 
+          is engaged in using Weka Classifier based on the phone's gyroscopic data
         </>
       ),
       image: "./assets/running_tracker.jpg",
@@ -205,7 +209,8 @@ const Projects = () => {
       subtitle: "An animal tracking web app",
       description: (
         <>
-          This web application allows a farmer to track his various types of pigs. If he loses a pig, and it is found somewhere else in the city, finders can share the coordinates directly with the farmer on MapBox as a marker location. The list reloads without refetching the page
+          This web application allows a farmer to track his various types of pigs. If he loses a pig, and it is found somewhere else in the city, 
+          finders can share the coordinates directly with the farmer on MapBox as a marker location. The list reloads without refetching the page
         </>
       ),
       image: "./assets/hogget.png",
@@ -215,11 +220,28 @@ const Projects = () => {
     },
     {
       category: "Web / Backend",
+      title: "Portfolio",
+      subtitle: "Isn't this way too meta? :D",
+      description: (
+        <>
+          A portfolio website consisting of a starry night background that switches between day and night, 
+          it has an about section, a work experience section, software's that I've built and a contact me section.
+        </>
+      ),
+      image: "./assets/portfolio.png",
+      tags: ["TypeScript", "SolidJS", "Bootstrap", "HTML", "CSS"],
+      demo: "",
+      code: "https://github.com/TheAp0cryphal/TaskManager",
+    },
+    {
+      category: "Web / Backend",
       title: "Music Industry Management System",
       subtitle: "Relational Database in MSSQL",
       description: (
         <>
-          MusicDB is a MSSQL database application designed to manage the complex relationships in the music industry ecosystem. The system tracks the many-to-many relationships between musicians and artists (bands/groups), maintains song catalogs with proper attribution, and enforces business rules that reflect real-world music industry practices.
+          MusicDB is a MSSQL database application designed to manage the complex relationships in the music industry ecosystem. 
+          The system tracks the many-to-many relationships between musicians and artists (bands/groups), 
+          maintains song catalogs with proper attribution, and enforces business rules that reflect real-world music industry practices.
         </>
       ),
       image: "./assets/database.png",
