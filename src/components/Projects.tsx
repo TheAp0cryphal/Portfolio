@@ -84,7 +84,7 @@ const Projects = () => {
     {
       category: "AI/ML Development",
       title: "Auto-Encoders",
-      subtitle: "Dimensionality Reduction | Variation Auto-Encoders",
+      subtitle: "Dimensionality Reduction | Variational Auto-Encoders",
       description: (
         <>
           Created a set of autoencoder models, including both vanilla and variational versions, using simple one-layer architectures with ReLU activations. 
@@ -94,7 +94,7 @@ const Projects = () => {
       image: "./assets/autoencoder.png",
       tags: ["Python"],
       demo: "",
-      code: "",
+      code: "https://github.com/TheAp0cryphal/Auto-Encoders",
     },
     {
       category: "AI/ML Development",
