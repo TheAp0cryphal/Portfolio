@@ -19,8 +19,8 @@ const Home = () => {
             <a href="#projects" class="btn btn-primary black-text">
               View My Work
             </a>
-            <a href="#contact" class="btn btn-outline-primary">
-              Contact Me
+            <a href="./assets/TanishkSharma_Resume.pdf" download="TanishkSharma_Resume.pdf" class="btn btn-outline-primary download-button">
+              Resume 🔗
             </a>
           </div>            
         </div>

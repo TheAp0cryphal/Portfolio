@@ -486,6 +486,13 @@ h2 {
   background-color: color.change($accent, $lightness: 60%);
 }
 
+.download-button {
+
+  &:hover {
+    color: black !important;
+  }
+}
+
 // Responsive adjustments
 @media (max-width: 768px) {
   .timeline:before {
