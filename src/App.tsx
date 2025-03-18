@@ -74,11 +74,11 @@ const App = () => {
         <section id="about">
           <About />
         </section>
-        <section id="projects">
-          <Projects />
-        </section>
         <section id="experience">
           <Timeline />
+        </section>
+        <section id="projects">
+          <Projects />
         </section>
         <section id="contact">
           <Contact />

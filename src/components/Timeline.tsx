@@ -71,10 +71,8 @@ const Timeline = () => {
               {item.description.map((desc) => (
                 desc.type === 'text' ? <p style={{ 'white-space': 'pre-line' }}>{desc.content}</p> : 
                 desc.type === 'video' ? (
-                  <div class="video-container pt-2">
+                  <div class="ratio ratio-16x9">
                     <iframe 
-                      width="470" 
-                      height="400" 
                       src={`https://www.youtube.com/embed/${desc.url}`} 
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                       allowfullscreen>
@@ -83,7 +81,7 @@ const Timeline = () => {
                 ) : desc.type === 'image' && (
                   <div class="image-container pt-2">
                     <a href={desc.url} target="_blank" rel="noopener noreferrer">
-                      <img src={desc.url} alt="Timeline image" style={{ 'max-width': '470px', 'max-height': '400px' }} />
+                      <img src={desc.url} alt="Timeline image" class="img-fluid" />
                     </a>
                   </div>
                 )
