@@ -4,7 +4,7 @@ const Projects = () => {
   const projectsData = [
     {
       category: "AI/ML Development",
-      title: "AI-Powered Workshift Recommendation System",
+      title: "AI Workshift Recommendation Engine",
       subtitle: "Reinforcement Learning | REINFORCE policy | NLP | PyTorch",
       description: (
         <>
@@ -16,10 +16,10 @@ const Projects = () => {
           <br /> ● Fairness & transparency in workforce allocation using a point-based system that rewards employee adherence.
         </>
       ),
-      image: "./assets/workshift.png",
+      image: "./assets/ShiftScheduler.jpg",
       tags: ["Python", "PyTorch", "NLP", "Reinforcement Learning"],
       demo: "",
-      code: "https://github.com/TheAp0cryphal/Workshift-Recommendation-System",
+      code: "https://github.com/TheAp0cryphal/Workshift-Recommendation-Engine",
     },
     {
       category: "AI/ML Development",
