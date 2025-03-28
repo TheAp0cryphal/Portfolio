@@ -4,6 +4,25 @@ const Projects = () => {
   const projectsData = [
     {
       category: "AI/ML Development",
+      title: "AI-Powered Workshift Recommendation System",
+      subtitle: "Reinforcement Learning | REINFORCE policy | NLP | PyTorch",
+      description: (
+        <>
+          Developed a reinforcement learning model using the REINFOCE policy to recommend optimal workshifts for employees based on their skills, availability, and workload.
+          <br /> 
+          <br /> ● Utilized NLP to process employee messages for shift cancellations
+          <br /> ● Reduce overtime expenses by penalizing assignments that exceed 8 hours
+          <br /> ● Recommend dynamic replacements for employees who cancel shifts using ML based ranking
+          <br /> ● Fairness & transparency in workforce allocation using a point-based system that rewards employee adherence.
+        </>
+      ),
+      image: "./assets/workshift.png",
+      tags: ["Python", "PyTorch", "NLP", "Reinforcement Learning"],
+      demo: "",
+      code: "https://github.com/TheAp0cryphal/Workshift-Recommendation-System",
+    },
+    {
+      category: "AI/ML Development",
       title: "eMosh",
       subtitle: "Computer Vision | Human Computer Interaction",
       description: (
@@ -351,6 +370,7 @@ const Projects = () => {
 
   const categories = Object.keys(groupedProjects);
   const [currentCategoryIndex, setCurrentCategoryIndex] = createSignal(0);
+  const [expandedCardId, setExpandedCardId] = createSignal(null);
 
   const updateCategoryIndex = (offset) => 
     setCurrentCategoryIndex((prev) => (prev + offset + categories.length) % categories.length);
@@ -360,6 +380,10 @@ const Projects = () => {
   const nextCategoryName = () => categories[(currentCategoryIndex() + 1) % categories.length];
   const nextCategory = () => updateCategoryIndex(1);
   const prevCategory = () => updateCategoryIndex(-1);
+
+  const toggleCardExpansion = (index) => {
+    setExpandedCardId(current => current === index ? null : index);
+  };
 
   return (
     <div class="container-fluid">
@@ -380,11 +404,14 @@ const Projects = () => {
       </div>
 
       {/* Projects Grid for Current Category */}
-      <div class="row g-3">
+      <div class="row g-3 project-row">
         <For each={groupedProjects[currentCategory()]}>
-          {(project) => (
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 shadow-sm">
+          {(project, index) => (
+            <div class="col-md-6 col-lg-4 project-column">
+              <div 
+                class={`card h-100 shadow-sm project-card ${expandedCardId() === index() ? 'expanded' : ''}`}
+                onClick={() => toggleCardExpansion(index())}
+              >
                 {project.image && (
                   project.image.endsWith('.mp4') ? (
                     <video class="card-img-top" controls autoplay>
@@ -399,21 +426,34 @@ const Projects = () => {
                   <h6 class="card-subtitle mb-2 font-weight-light">
                     <small>{project.subtitle}</small>
                   </h6>
-                  <p class="card-text flex-grow-3">
-                    {project.description}
-                  </p>
-                  <div class="d-flex flex-wrap gap-1 mb-3">
+                  <div class="card-description">
+                    <div class="description-content">
+                      <p class="card-text flex-grow-3">
+                        {project.description}
+                      </p>
+                    </div>
+                    <div class="description-fade"></div>
+                  </div>
+                  <div class="d-flex flex-wrap gap-1 mb-3 mt-2">
                     <For each={project.tags}>
                       {(tag) => <span class="badge bg-secondary">{tag}</span>}
                     </For>
                   </div>
                   <div class="d-flex gap-2 mt-auto">
                     {project.demo && (
-                      <a href={project.demo} class="btn btn-outline-primary btn-sm">
+                      <a 
+                        href={project.demo} 
+                        class="btn btn-outline-primary btn-sm"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         Live Demo
                       </a>
                     )}
-                    <a href={project.code} class="btn btn-light btn-sm">
+                    <a 
+                      href={project.code} 
+                      class="btn btn-light btn-sm"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       View Code
                     </a>
                   </div>

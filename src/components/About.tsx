@@ -6,9 +6,9 @@ const About = () => {
       </div>
       <div class="row">
         <div class="col-md-6">
-          <h5 class="mb-3">Congratulations for making it till here! That tells me you're curious, which is a trait I highly value (and probably share!). 
-            I feel this a great opportunity for me to broadcast about myself, how I think and my world-view of the current state of affairs in technology and how I reflect on it.
-          </h5>
+          <p class="h5">Congratulations for making it till here! That tells me you're curious, which is a trait I highly value (and probably share!). 
+            This is a great opportunity for me to broadcast about myself, how I think and my world-view of the current state of affairs in technology and how I reflect on it.
+          </p>
           <p>
             I like working with, and spend most of my time fiddling with computers. To nurture a holistic understanding of technology and business,
             I keep up-to-date with the latest developments, observing the rapid progress that's happening each day. 
@@ -32,37 +32,8 @@ const About = () => {
         </div>
         <div class="col-md-6">
           <h3>
-         .--,_
-        ['    '\.
-         \       `''|
-         |         ,]
-          `._      ].
-            |     \
-          _/       -'\
-         ,'          ,'
-       _/'          \                     ,..-''L_
-  |--''              '-;__        |\     /      .,'
-   \                      `--.__,'_ '----     ,-'
-   `\                             \`-'\__    ,|
-,--;/                             /     .| ,/
-\__                               '|    /  / 
-  ./  _-,                         _| 
-  \__/ /                        ,/        "
-       |                      _/
-       |                    ,/
-       \                   /
-        |              /.-'
-         \           _/                   :
-          |         /                      .
-           |        |                     .
-      .    |        |                     '.
-      ;     \       /                     ;\
-      '      |     |                
-             \    _|                      : 
-              \_,/                         "'
-                                          : '
-                                             '
-</h3>
+            Lprem
+          </h3>
         </div>
       </div>
     </div>
