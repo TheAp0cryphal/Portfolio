@@ -421,7 +421,7 @@ const Projects = () => {
                       <source src={project.image} type="video/mp4" />
                     </video>
                   ) : (
-                    <img src={project.image} class="card-img-top" alt={project.title} style={{ height: '300px' }} />
+                    <img src={project.image} class="card-img-top" alt={project.title} style={{ height: '200px' }} />
                   )
                 )}
                 <div class="card-body d-flex flex-column">
