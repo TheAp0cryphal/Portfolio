@@ -8,7 +8,7 @@ const Projects = () => {
       subtitle: "Reinforcement Learning | REINFORCE policy | NLP | PyTorch",
       description: (
         <>
-          Developed a reinforcement learning model using the REINFOCE policy to recommend optimal workshifts for employees based on their skills, availability, and workload.
+          Developed a reinforcement learning model using the REINFORCE policy to recommend optimal workshifts for employees based on their skills, availability, and workload.
           <br /> 
           <br /> ● Utilized NLP to process employee messages for shift cancellations
           <br /> ● Reduce overtime expenses by penalizing assignments that exceed 8 hours
@@ -370,9 +370,8 @@ const Projects = () => {
 
   const categories = Object.keys(groupedProjects);
   const [currentCategoryIndex, setCurrentCategoryIndex] = createSignal(0);
-  const [expandedCardId, setExpandedCardId] = createSignal(null);
 
-  const updateCategoryIndex = (offset) => 
+  const updateCategoryIndex = (offset) =>
     setCurrentCategoryIndex((prev) => (prev + offset + categories.length) % categories.length);
 
   const currentCategory = () => categories[currentCategoryIndex()];
@@ -380,10 +379,6 @@ const Projects = () => {
   const nextCategoryName = () => categories[(currentCategoryIndex() + 1) % categories.length];
   const nextCategory = () => updateCategoryIndex(1);
   const prevCategory = () => updateCategoryIndex(-1);
-
-  const toggleCardExpansion = (index) => {
-    setExpandedCardId(current => current === index ? null : index);
-  };
 
   return (
     <div class="container-fluid">
@@ -409,16 +404,24 @@ const Projects = () => {
           {(project, index) => (
             <div class="col-md-6 col-lg-4 project-column">
               <div 
-                class={`card h-100 shadow-sm project-card ${expandedCardId() === index() ? 'expanded' : ''}`}
-                onClick={() => toggleCardExpansion(index())}
+                class="card h-100 shadow-sm project-card clickable-card"
+                style={{ position: 'relative', cursor: 'pointer' }}
+                onClick={() => window.open(project.code, '_blank')}
               >
+                {/* Link indicator */}
+                <div 
+                  class="card-link-indicator" 
+                  style={{ position: 'absolute', top: '10px', right: '10px', "font-size": "1.5em" }}
+                >
+                  🔗
+                </div>
                 {project.image && (
                   project.image.endsWith('.mp4') ? (
                     <video class="card-img-top" controls autoplay>
                       <source src={project.image} type="video/mp4" />
                     </video>
                   ) : (
-                    <img src={project.image} class="card-img-top" alt={project.title} style={{height: '300px'}} />
+                    <img src={project.image} class="card-img-top" alt={project.title} style={{ height: '300px' }} />
                   )
                 )}
                 <div class="card-body d-flex flex-column">
@@ -431,32 +434,14 @@ const Projects = () => {
                       <p class="card-text flex-grow-3">
                         {project.description}
                       </p>
+                      <div class="d-flex flex-wrap gap-1 mb-3 mt-2">
+                        <For each={project.tags}>
+                          {(tag) => <span class="badge bg-secondary">{tag}</span>}
+                        </For>
+                      </div>
                     </div>
-                    <div class="description-fade"></div>
                   </div>
-                  <div class="d-flex flex-wrap gap-1 mb-3 mt-2">
-                    <For each={project.tags}>
-                      {(tag) => <span class="badge bg-secondary">{tag}</span>}
-                    </For>
-                  </div>
-                  <div class="d-flex gap-2 mt-auto">
-                    {project.demo && (
-                      <a 
-                        href={project.demo} 
-                        class="btn btn-outline-primary btn-sm"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        Live Demo
-                      </a>
-                    )}
-                    <a 
-                      href={project.code} 
-                      class="btn btn-light btn-sm"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      View Code
-                    </a>
-                  </div>
+                  <div class="description-fade"></div>
                 </div>
               </div>
             </div>
