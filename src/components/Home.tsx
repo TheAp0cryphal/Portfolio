@@ -12,9 +12,10 @@ const Home = () => {
           </div>
           <h1 class="display-4 fw-bold mb-4 text-center">Hi, I'm <span class="name">Tanishk</span></h1>
           <p class="lead mb-4 text-center">
-            I am a <span class="marked-text">software generalist. </span>
+            I am a <span class="marked-text"> software engineer. </span>
             I am passionate about working with complex software at <span class="marked-text">scale.</span>
           </p>
+          <p class="lead mb-4 text-center">Mobile | AI / ML | Backend | Frontend | UI / UX </p>
           <div class="d-flex gap-3 justify-content-center">
             <a href="#projects" class="btn btn-primary black-text">
               View My Work
