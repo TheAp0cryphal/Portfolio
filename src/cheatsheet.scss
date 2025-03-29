@@ -582,3 +582,48 @@ p {
   overflow: hidden;
   transition: max-height 1s ease;
 }
+
+.text-adventure-container {
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.text-adventure-screen {
+  background-color: #000;
+  background-image: linear-gradient(rgba(0, 100, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 100, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 10px;
+  padding: 20px;
+  color: $accent;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  box-shadow: 0 0 10px color.change($accent, $lightness: 10%);
+  border: 2px solid $accent;
+}
+
+.game-output {
+  min-height: 250px;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+}
+
+.game-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.game-input {
+  background: transparent;
+  border: none;
+  color: $accent;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  flex-grow: 1;
+  outline: none;
+}
