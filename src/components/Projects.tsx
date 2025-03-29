@@ -16,7 +16,7 @@ const Projects = () => {
           <br /> ● Fairness & transparency in workforce allocation using a point-based system that rewards employee adherence.
         </>
       ),
-      image: "./assets/",
+      image: "./assets/ShiftScheduler.jpg",
       tags: ["Python", "PyTorch", "NLP", "Reinforcement Learning"],
       demo: "",
       code: "https://github.com/TheAp0cryphal/Workshift-Recommendation-Engine",
