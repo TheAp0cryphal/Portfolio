@@ -22,6 +22,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mlc-ai/web-llm": "^0.2.78",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "solid-js": "^1.9.5",

@@ -12,7 +12,7 @@ const About = () => {
       <div class="text-adventure-container">
               <div class="text-adventure-screen">
                 <div class="game-output">
-                  <h4>Hey? You, yes you! Finally, you're here! (or you may skip by typing 'skip')</h4>
+                  <h4>Hey? You, yes you! Finally, you're here! <span class="text-danger skip-text" onclick={() => setShowAbout(true)} style={{ float: 'right' }}>skip</span></h4>
                   <h5 class="text-info">
                     Your goal is navigate and find the light switch to turn on the light to reveal the about me section.
                   </h5>
@@ -33,12 +33,7 @@ const About = () => {
                   />
                 </div>
               </div>
-            </div>
-      
-      <button onClick={() => setShowAbout(!showAbout())}>
-        {showAbout() ? "Hide About Me" : "Show About Me"}
-      </button>
-      
+            </div>      
       <div class={`about-content ${showAbout() ? 'fade-in' : 'fade-out'}`}>
         {showAbout() && (
           <div class="row">
