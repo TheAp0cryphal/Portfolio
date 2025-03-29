@@ -1,25 +1,24 @@
 import { createSignal } from "solid-js";
 
 const About = () => {
-  const [showAbout, setShowAbout] = createSignal(false);
+  const [showAbout, setShowAbout] = createSignal(true);
 
   return (
     <div class="container">
       <div class="text-center mb-5">
         <h2>About Me</h2>
       </div>
-
-      <div class="text-adventure-container">
-              <div class="text-adventure-screen">
-                <div class="game-output">
-                  <h4>Hey? You, yes you! Finally, you're here! <span class="text-danger skip-text" onclick={() => setShowAbout(true)} style={{ float: 'right' }}>skip</span></h4>
-                  <h5 class="text-info">
-                    Your goal is navigate and find the light switch to turn on the light to reveal the about me section.
-                  </h5>
-                </div>
-                <div class="game-input-container">
-                  <span class="prompt">&gt;</span>
-                  <input 
+        <div class="text-adventure-container">
+          <div class="text-adventure-screen">
+            <div class="game-output">
+              <h4>Hey? You, yes you! Finally, you're here! <span class="text-danger skip-text" onclick={() => setShowAbout(true)} style={{ float: 'right' }}>skip</span></h4>
+                <h5 class="text-info">
+                Your goal is navigate and find the light switch to turn on the light to reveal the about me section.
+              </h5>
+            </div>
+            <div class="game-input-container">
+              <span class="prompt">&gt;</span>
+              <input 
                     type="text" 
                     class="game-input" 
                     placeholder="Type something..."
@@ -31,9 +30,9 @@ const About = () => {
                       e.target.value = sanitized;
                     }}
                   />
-                </div>
               </div>
-            </div>      
+          </div>
+        </div>      
       <div class={`about-content ${showAbout() ? 'fade-in' : 'fade-out'}`}>
         {showAbout() && (
           <div class="row">
