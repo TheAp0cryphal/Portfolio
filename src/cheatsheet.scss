@@ -633,3 +633,11 @@ p {
   cursor: pointer;
   color: $accent;
 }
+
+.card-link-indicator {
+  background-color: rgba(0, 0, 0, 0.80);
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}

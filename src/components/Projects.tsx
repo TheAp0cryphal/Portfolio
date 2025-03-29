@@ -16,7 +16,7 @@ const Projects = () => {
           <br /> ● Fairness & transparency in workforce allocation using a point-based system that rewards employee adherence.
         </>
       ),
-      image: "./assets/ShiftScheduler.jpg",
+      image: "./assets/",
       tags: ["Python", "PyTorch", "NLP", "Reinforcement Learning"],
       demo: "",
       code: "https://github.com/TheAp0cryphal/Workshift-Recommendation-Engine",
@@ -406,12 +406,11 @@ const Projects = () => {
               <div 
                 class="card h-100 shadow-sm project-card clickable-card"
                 style={{ position: 'relative', cursor: 'pointer' }}
-                onClick={() => window.open(project.code, '_blank')}
               >
                 {/* Link indicator */}
                 <div 
                   class="card-link-indicator" 
-                  style={{ position: 'absolute', top: '10px', right: '10px', "font-size": "1.5em" }}
+                  style={{ position: 'absolute', top: '10px', right: '10px', "font-size": "1em" }}
                 >
                   🔗
                 </div>
@@ -421,7 +420,13 @@ const Projects = () => {
                       <source src={project.image} type="video/mp4" />
                     </video>
                   ) : (
-                    <img src={project.image} class="card-img-top" alt={project.title} style={{ height: '200px' }} />
+                    <img 
+                      src={project.image} 
+                      class="card-img-top" 
+                      alt={project.title} 
+                      style={{ height: '200px' }} 
+                      onClick={() => window.open(project.code, '_blank')}
+                    />
                   )
                 )}
                 <div class="card-body d-flex flex-column">
