@@ -9,8 +9,31 @@ const About = () => {
         <h2>About Me</h2>
       </div>
 
-
-
+      <div class="text-adventure-container">
+              <div class="text-adventure-screen">
+                <div class="game-output">
+                  <h4>Hey? You, yes you! Finally, you're here! (or you may skip by typing 'skip')</h4>
+                  <h5 class="text-info">
+                    Your goal is navigate and find the light switch to turn on the light to reveal the about me section.
+                  </h5>
+                </div>
+                <div class="game-input-container">
+                  <span class="prompt">&gt;</span>
+                  <input 
+                    type="text" 
+                    class="game-input" 
+                    placeholder="Type something..."
+                    onInput={(e) => {
+                      const sanitized = e.target.value
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(/&/g, '&amp;');
+                      e.target.value = sanitized;
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
       
       <button onClick={() => setShowAbout(!showAbout())}>
         {showAbout() ? "Hide About Me" : "Show About Me"}
