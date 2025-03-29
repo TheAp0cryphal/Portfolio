@@ -19,7 +19,7 @@ const Timeline = () => {
             title: "GenAI Application Developer",
             company: "Centre for Digital Media",
             description: [
-              { type: 'text', content: 'Built a GenAI application where an LLM behaves like a "GOD influencing the game state in real time' },
+              { type: 'text', content: 'Built a GenAI application where an LLM behaves like a "GOD" influencing the game state in real time.' },
               { type: 'video', url: 'L_jhwsPwRDY' }
             ],
           },
@@ -29,7 +29,7 @@ const Timeline = () => {
             title: "Software Engineering Co-op",
             company: "Rivian Automotive Inc.",
             description: [
-              { type: 'text', content: `New Rear Screen Display - Spotlight Infotainment Project for Q1 2024 shipped to 100,000+ users pre-releasing OTA by 4 weeks. 
+              { type: 'text', content: `New Rear Screen Display - Spotlight Infotainment Project for Q1 2024 shipped to 100,000+ users pre-releasing OTA by 4 weeks.
                 
                 Features: 
                 ● Media Playback

@@ -8,12 +8,12 @@ const Projects = () => {
       subtitle: "Reinforcement Learning | REINFORCE policy | NLP | PyTorch",
       description: (
         <>
-          Developed a reinforcement learning model using the REINFORCE policy to recommend optimal workshifts for employees based on their skills, availability, and workload.
+          Developed a reinforcement learning model using the REINFORCE policy to recommend optimal workshifts for employees based on their skills, availability, and workload
           <br /> 
           <br /> ● Utilized NLP to process employee messages for shift cancellations
           <br /> ● Reduce overtime expenses by penalizing assignments that exceed 8 hours
           <br /> ● Recommend dynamic replacements for employees who cancel shifts using ML based ranking
-          <br /> ● Fairness & transparency in workforce allocation using a point-based system that rewards employee adherence.
+          <br /> ● Fairness & transparency in workforce allocation using a point-based system that rewards employee adherence
         </>
       ),
       image: "./assets/ShiftScheduler.jpg",
