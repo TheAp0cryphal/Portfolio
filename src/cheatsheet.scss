@@ -333,6 +333,10 @@ h2 {
 
 .container-fluid {
   padding: 0px 100px;
+  
+  @media (max-width: 768px) {
+    padding: 0px 15px;
+  }
 }
 
 .nav-btn {
