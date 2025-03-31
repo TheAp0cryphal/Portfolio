@@ -1,5 +1,11 @@
 import { render } from "solid-js/web";
 import "./cheatsheet.scss";
 import App from "./App";
+import { Analytics } from "@vercel/analytics/react";
 
-render(() => <App />, document.getElementById("root")!);
+render(() => (
+  <>
+    <App />
+    <Analytics />
+  </>
+), document.getElementById("root")!);
