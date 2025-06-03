@@ -1,4 +1,4 @@
-import { createSignal, onMount } from "solid-js";
+import { createSignal, onMount, createEffect } from "solid-js";
 
 const About = () => {
   const [showAbout, setShowAbout] = createSignal(false);
@@ -7,6 +7,22 @@ const About = () => {
   const [inputValue, setInputValue] = createSignal("");
   const [scenario, setScenario] = createSignal<any>(null);
   const [flashlightFound, setFlashlightFound] = createSignal(false);
+
+  // Ref for the game output container to enable auto-scrolling
+  let gameOutputRef: HTMLDivElement | undefined;
+
+  // Auto-scroll to bottom when new content is added
+  const scrollToBottom = () => {
+    if (gameOutputRef) {
+      gameOutputRef.scrollTop = gameOutputRef.scrollHeight;
+    }
+  };
+
+  // Effect to auto-scroll when game output changes
+  createEffect(() => {
+    gameOutput(); // Track changes to gameOutput
+    setTimeout(scrollToBottom, 50); // Small delay to ensure content is rendered
+  });
 
   // Random scenarios that change each refresh
   const scenarios = [
@@ -209,7 +225,11 @@ const About = () => {
               </button>
             </div>
             
-            <div class="game-output" style={{ "white-space": "pre-wrap", "max-height": "350px", "overflow-y": "auto" }}>
+            <div 
+              ref={gameOutputRef}
+              class="game-output" 
+              style={{ "white-space": "pre-wrap", "max-height": "350px", "overflow-y": "auto" }}
+            >
               {gameOutput()}
             </div>
             
