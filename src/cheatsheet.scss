@@ -212,14 +212,34 @@ body {
   box-shadow: 0 50px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   
+  .container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+  }
+  
   .navbar-brand {
     font-weight: 700;
     color: $primary;
     transition: all 0.3s ease;
+    flex: 0 0 auto;
     
     &:hover {
       transform: scale(1.05);
       color: $accent;
+    }
+  }
+
+  .navbar-nav {
+    flex: 0 0 auto;
+    
+    &.d-none.d-lg-flex {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex !important;
+      gap: 0;
     }
   }
 
