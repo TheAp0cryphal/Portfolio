@@ -1,4 +1,4 @@
-import { For, createSignal } from "solid-js";
+import { For, createSignal, onCleanup } from "solid-js";
 
 const Projects = () => {
   const projectsData = [
@@ -204,8 +204,7 @@ const Projects = () => {
       ),
       image: "./assets/game-over.png",
       tags: ["Android", "Java"],
-      demo: "",
-      code: "https://github.com/TheAp0cryphal/SFU-Hackathon-Game-Over-",
+      demo: "https://github.com/TheAp0cryphal/SFU-Hackathon-Game-Over-",
     },
     {
       category: "Mobile Development",
@@ -370,9 +369,44 @@ const Projects = () => {
 
   const categories = Object.keys(groupedProjects);
   const [currentCategoryIndex, setCurrentCategoryIndex] = createSignal(0);
+  const [isTransitioning, setIsTransitioning] = createSignal(false);
+  const [showContent, setShowContent] = createSignal(true);
 
-  const updateCategoryIndex = (offset) =>
-    setCurrentCategoryIndex((prev) => (prev + offset + categories.length) % categories.length);
+  let debounceTimer: number | null = null;
+
+  const updateCategoryIndex = (offset: number) => {
+    // Clear any existing debounce timer
+    if (debounceTimer !== null) {
+      clearTimeout(debounceTimer);
+    }
+
+    // If already transitioning, ignore the click
+    if (isTransitioning()) return;
+
+    // Start transition
+    setIsTransitioning(true);
+    setShowContent(false); // Hide content immediately
+
+    // Debounced update with 500ms delay
+    debounceTimer = setTimeout(() => {
+      // Update the category index
+      setCurrentCategoryIndex((prev) => (prev + offset + categories.length) % categories.length);
+      
+      // Small delay to ensure DOM update, then show content
+      setTimeout(() => {
+        setShowContent(true);
+        setIsTransitioning(false);
+        debounceTimer = null;
+      }, 50);
+    }, 500);
+  };
+
+  // Cleanup timer on component unmount
+  onCleanup(() => {
+    if (debounceTimer !== null) {
+      clearTimeout(debounceTimer);
+    }
+  });
 
   const currentCategory = () => categories[currentCategoryIndex()];
   const prevCategoryName = () => categories[(currentCategoryIndex() - 1 + categories.length) % categories.length];
@@ -382,76 +416,82 @@ const Projects = () => {
 
   return (
     <div class="container-fluid">
-      <div class="text-center mb-2">
+      <div class="text-center mb-4">
         <h2>Software I've Built</h2>
       </div>
 
-      <div class="nav-grid text-center mb-5 justify-content-center align-items-center">
-        <button onClick={prevCategory} class="nav-btn btn">
-          <span class="me-2 mb-1 arrow" style="font-size: 2.5em;">&lt;</span>
-          <span class="nav-text">{prevCategoryName()}</span>
+      <div class="nav-grid">
+        <button onClick={() => prevCategory()} class="nav-btn" disabled={isTransitioning()}>
+          <span class="arrow">&lt;</span>
+          <span class="nav-text ms-2">{prevCategoryName()}</span>
         </button>
-        <h3 class="category-title flex-grow-1 text-center"><b>{currentCategory()}</b></h3>
-        <button onClick={nextCategory} class="nav-btn btn next-category">
-          <span class="nav-text">{nextCategoryName()}</span>
-          <span class="ms-2 arrow" style="font-size: 2.5em;">&gt;</span>
+        
+        <h3 class={`category-title ${showContent() ? 'fade-in' : 'fade-out'}`}>
+          {currentCategory()}
+        </h3>
+        
+        <button onClick={() => nextCategory()} class="nav-btn" disabled={isTransitioning()}>
+          <span class="nav-text me-2">{nextCategoryName()}</span>
+          <span class="arrow">&gt;</span>
         </button>
       </div>
 
       {/* Projects Grid for Current Category */}
-      <div class="row g-3 project-row">
-        <For each={groupedProjects[currentCategory()]}>
-          {(project, index) => (
-            <div class="col-md-6 col-lg-4 project-column">
-              <div 
-                class="card h-100 shadow-sm project-card clickable-card"
-                style={{ position: 'relative', cursor: 'pointer' }}
-              >
-                {/* Link indicator */}
+      <div class={`projects-container ${showContent() ? 'fade-in' : 'fade-out'}`}>
+        <div class="row g-3 project-row">
+          <For each={groupedProjects[currentCategory()]}>
+            {(project, index) => (
+              <div class="col-md-6 col-lg-4 project-column">
                 <div 
-                  class="card-link-indicator" 
-                  style={{ position: 'absolute', top: '10px', right: '10px', "font-size": "1em" }}
+                  class="card h-100 shadow-sm project-card clickable-card"
+                  style={{ position: 'relative', cursor: 'pointer' }}
                 >
-                  🔗
-                </div>
-                {project.image && (
-                  project.image.endsWith('.mp4') ? (
-                    <video class="card-img-top" controls autoplay>
-                      <source src={project.image} type="video/mp4" />
-                    </video>
-                  ) : (
-                    <img 
-                      src={project.image} 
-                      class="card-img-top" 
-                      alt={project.title} 
-                      style={{ height: '200px' }} 
-                      onClick={() => window.open(project.code, '_blank')}
-                    />
-                  )
-                )}
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title"><b>{project.title}</b></h5>
-                  <h6 class="card-subtitle mb-2 font-weight-light">
-                    <small>{project.subtitle}</small>
-                  </h6>
-                  <div class="card-description">
-                    <div class="description-content">
-                      <p class="card-text flex-grow-3">
-                        {project.description}
-                      </p>
-                      <div class="d-flex flex-wrap gap-1 mb-3 mt-2">
-                        <For each={project.tags}>
-                          {(tag) => <span class="badge bg-secondary">{tag}</span>}
-                        </For>
+                  {/* Link indicator */}
+                  <div 
+                    class="card-link-indicator" 
+                    style={{ position: 'absolute', top: '10px', right: '10px', "font-size": "1em" }}
+                  >
+                    🔗
+                  </div>
+                  {project.image && (
+                    project.image.endsWith('.mp4') ? (
+                      <video class="card-img-top" controls autoplay>
+                        <source src={project.image} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img 
+                        src={project.image} 
+                        class="card-img-top" 
+                        alt={project.title} 
+                        style={{ height: '200px' }} 
+                        onClick={() => window.open(project.code, '_blank')}
+                      />
+                    )
+                  )}
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title"><b>{project.title}</b></h5>
+                    <h6 class="card-subtitle mb-2 font-weight-light">
+                      <small>{project.subtitle}</small>
+                    </h6>
+                    <div class="card-description">
+                      <div class="description-content">
+                        <p class="card-text flex-grow-3">
+                          {project.description}
+                        </p>
+                        <div class="d-flex flex-wrap gap-1 mb-3 mt-2">
+                          <For each={project.tags}>
+                            {(tag) => <span class="badge bg-secondary">{tag}</span>}
+                          </For>
+                        </div>
                       </div>
                     </div>
+                    <div class="description-fade"></div>
                   </div>
-                  <div class="description-fade"></div>
                 </div>
               </div>
-            </div>
-          )}
-        </For>
+            )}
+          </For>
+        </div>
       </div>
     </div>
   );
