@@ -3,5 +3,5 @@ import "./cheatsheet.scss";
 import App from "./App";
 import { inject } from '@vercel/analytics';
  
-inject();
+// inject();
 render(() => <App />, document.getElementById("root")!);

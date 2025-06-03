@@ -51,7 +51,7 @@ const Contact = () => {
       <div class="container">
         <div class="text-center mb-2">
           <h2>Get in Touch</h2>
-          <p class="text-muted">Have a project in mind? Let's chat! ☕</p>
+          <p class="text-secondary">Have a project in mind? Let's chat! ☕</p>
         </div>
         
         {showThankYou() && (
@@ -128,7 +128,7 @@ const Contact = () => {
                 class={`btn btn-outline-warning mt-2 submit-button ${isFormValid() ? 'ready-to-send' : 'not-ready'}`}
                 disabled={!isFormValid()}
               >
-                {isFormValid() ? "Send via Email 🚀" : "Fill out the form above ⬆️"}
+                {isFormValid() ? "Send via Email 🚀" : "Fill out the form above ⬆"}
               </button>
             </form>
           </div>
