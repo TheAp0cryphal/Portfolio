@@ -7,8 +7,15 @@ const Timeline = () => {
       <div class="timeline">
         {[
           {
-            startYear: "September 2024",
+            startYear: "May 2025",
             endYear: "Present",
+            title: "Product Software Engineer",
+            company: "Agentnoon",
+            description: ["Intuitive AI-native org design platform for building the workforce of the future"],
+          },
+          {
+            startYear: "September 2024",
+            endYear: "April 2025",
             title: "Working on something cool with LLMs in Education",
             company: "Independent Stealth Initiative 🤫",
             description: [],
