@@ -217,6 +217,12 @@ body {
     justify-content: space-between !important;
     align-items: center !important;
     width: 100%;
+    
+    // Mobile responsive adjustments
+    @media (max-width: 991.98px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
   
   .navbar-brand {
@@ -229,17 +235,25 @@ body {
       transform: scale(1.05);
       color: $accent;
     }
+    
+    // Mobile responsive adjustments
+    @media (max-width: 576px) {
+      font-size: 1.1rem;
+      margin-right: 10px;
+    }
   }
 
   .navbar-nav {
     flex: 0 0 auto;
     
     &.d-none.d-lg-flex {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex !important;
-      gap: 0;
+      @media (min-width: 992px) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex !important;
+        gap: 0;
+      }
     }
   }
 
@@ -258,6 +272,22 @@ body {
       color: white;
       background-color: rgba($accent, 0.2);
       transform: translateY(-2px) scale(1.1);
+    }
+    
+    // Mobile adjustments for better spacing
+    @media (max-width: 991.98px) {
+      margin: 0 3px;
+      padding: 6px;
+    }
+    
+    @media (max-width: 576px) {
+      margin: 0 2px;
+      padding: 4px;
+      
+      svg {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 
