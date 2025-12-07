@@ -4,6 +4,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Timeline from "./components/Timeline";
+import AsciiBoard from './components/AsciiBoard';
 
 import { AiFillGithub, AiFillLinkedIn, AiFillMailIcon } from "./utils/IconUtil";
 import Skills from "./components/Skills";
@@ -59,6 +60,10 @@ const App = () => {
         <img class="trees" src="/assets/trees.png" style={{ height: "auto", width: "100%" }} />
       </div>
       <main>
+        {/* Ascii Board Section */}
+        <section id="ascii-board" style={{ position: 'relative', "z-index": 10, "background": "transparent", "box-shadow": "none", "backdrop-filter": "none" }}>
+          <AsciiBoard />
+        </section>
         <section id="about">
           <About />
         </section>
