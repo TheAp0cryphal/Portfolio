@@ -5,14 +5,21 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Timeline from "./components/Timeline";
 import AsciiBoard from './components/AsciiBoard';
+import ScrollReveal from "./components/ScrollReveal";
 
 import { AiFillGithub, AiFillLinkedIn, AiFillMailIcon } from "./utils/IconUtil";
 import Skills from "./components/Skills";
+import TwinklingStars from "./components/TwinklingStars";
+import Clouds from "./components/Clouds";
+import Comets from "./components/Comets";
 
 const App = () => {
   return (
     <div>
       <div class="gradient-background">
+        <TwinklingStars />
+        <Clouds />
+        <Comets />
         <header>
           <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container d-flex justify-content-between align-items-center">
@@ -62,19 +69,27 @@ const App = () => {
       <main>
         {/* Ascii Board Section */}
         <section id="ascii-board" style={{ position: 'relative', "z-index": 10, "background": "transparent", "box-shadow": "none", "backdrop-filter": "none" }}>
-          <AsciiBoard />
+          <ScrollReveal>
+            <AsciiBoard />
+          </ScrollReveal>
         </section>
         <section id="about">
-          <About />
+          <ScrollReveal>
+            <About />
+          </ScrollReveal>
         </section>
         <section id="experience">
           <Timeline />
         </section>
         <section id="projects">
-          <Projects />
+          <ScrollReveal>
+            <Projects />
+          </ScrollReveal>
         </section>
         <section id="contact">
-          <Contact />
+          <ScrollReveal>
+            <Contact />
+          </ScrollReveal>
         </section>
       </main>
       <Footer />

@@ -1,4 +1,5 @@
-import { For, createSignal, onCleanup } from "solid-js";
+import { For, createSignal, onCleanup, createMemo, onMount } from "solid-js";
+import { AiOutlineLeft, AiOutlineRight } from "../utils/IconUtil";
 
 const Projects = () => {
   const projectsData = [
@@ -9,7 +10,7 @@ const Projects = () => {
       description: (
         <>
           Developed a reinforcement learning model using the REINFORCE policy to recommend optimal workshifts for employees based on their skills, availability, and workload
-          <br /> 
+          <br />
           <br /> ● Utilized NLP to process employee messages for shift cancellations
           <br /> ● Reduce overtime expenses by penalizing assignments that exceed 8 hours
           <br /> ● Recommend dynamic replacements for employees who cancel shifts using ML based ranking
@@ -61,7 +62,7 @@ const Projects = () => {
       subtitle: "Sentiment Analysis | Web Scraping",
       description: (
         <>
-          We perform sentiment analysis on reddit comments about crypto. We merge it with fear and greed index to determine the upcoming crypto price and 
+          We perform sentiment analysis on reddit comments about crypto. We merge it with fear and greed index to determine the upcoming crypto price and
           how close the currencies are intertwined. A comparative study of multiple models.
           <br /><br />
           Models Used: Random Forest Regression, Gradient Boosting Regression, Linear Regression, Random Forest Classification, KNN, Naive Bayes
@@ -106,7 +107,7 @@ const Projects = () => {
       subtitle: "Dimensionality Reduction | Variational Auto-Encoders",
       description: (
         <>
-          Created a set of autoencoder models, including both vanilla and variational versions, using simple one-layer architectures with ReLU activations. 
+          Created a set of autoencoder models, including both vanilla and variational versions, using simple one-layer architectures with ReLU activations.
           The goal is to explore unsupervised learning by compressing data into a compact representation and then reconstructing it
         </>
       ),
@@ -150,12 +151,12 @@ const Projects = () => {
       description: (
         <>
           Features:
-          <br /> ● Pager System (Scan QR ✔) 
-          <br /> ● Queue Tracking  
-          <br /> ● Login and Registration / User Profile 
-          <br /> ● Nearby Restaurants Info (Google API) 
-          <br /> ● Recommendation Engine for Cuisines 
-          <br /> ● Favorites 
+          <br /> ● Pager System (Scan QR ✔)
+          <br /> ● Queue Tracking
+          <br /> ● Login and Registration / User Profile
+          <br /> ● Nearby Restaurants Info (Google API)
+          <br /> ● Recommendation Engine for Cuisines
+          <br /> ● Favorites
           <br /> ● Language Support (French & Mandarin)
         </>
       ),
@@ -198,7 +199,7 @@ const Projects = () => {
       subtitle: "6 Hour SFU Hackathon",
       description: (
         <>
-          A text based game that lets your traverse the map via text. The tasks involve making decision in certain situations. 
+          A text based game that lets your traverse the map via text. The tasks involve making decision in certain situations.
           Making the right decision will allow you to proceed to finish all 5 tasks, a wrong choice, however, restarts the game
         </>
       ),
@@ -212,7 +213,7 @@ const Projects = () => {
       subtitle: "A running tracking app",
       description: (
         <>
-          This app allows users to track and save their running sessions, it is able to automatically identify the activity the user 
+          This app allows users to track and save their running sessions, it is able to automatically identify the activity the user
           is engaged in using Weka Classifier based on the phone's gyroscopic data
         </>
       ),
@@ -227,7 +228,7 @@ const Projects = () => {
       subtitle: "An animal tracking web app",
       description: (
         <>
-          This web application allows a farmer to track his various types of pigs. If he loses a pig, and it is found somewhere else in the city, 
+          This web application allows a farmer to track his various types of pigs. If he loses a pig, and it is found somewhere else in the city,
           finders can share the coordinates directly with the farmer on MapBox as a marker location. The list reloads without refetching the page
         </>
       ),
@@ -242,7 +243,7 @@ const Projects = () => {
       subtitle: "Isn't this way too meta? :D",
       description: (
         <>
-          A portfolio website consisting of a starry night background that switches between day and night, 
+          A portfolio website consisting of a starry night background that switches between day and night,
           it has an about section, a work experience section, software's that I've built and a contact me section.
         </>
       ),
@@ -257,8 +258,8 @@ const Projects = () => {
       subtitle: "Relational Database in MSSQL",
       description: (
         <>
-          MusicDB is a MSSQL database application designed to manage the complex relationships in the music industry ecosystem. 
-          The system tracks the many-to-many relationships between musicians and artists (bands/groups), 
+          MusicDB is a MSSQL database application designed to manage the complex relationships in the music industry ecosystem.
+          The system tracks the many-to-many relationships between musicians and artists (bands/groups),
           maintains song catalogs with proper attribution, and enforces business rules that reflect real-world music industry practices.
         </>
       ),
@@ -287,8 +288,8 @@ const Projects = () => {
       subtitle: "Stereo Reconstruction",
       description: (
         <>
-          No Libraries, only pure math! 
-          <br /> Theory: https://w.wiki/DQ8e 
+          No Libraries, only pure math!
+          <br /> Theory: https://w.wiki/DQ8e
           <br /><br />
           I perform some tricks to get the ability to transform an airplane from a 2D image to a 3D representation. (Understanding the "depth" of the 2D image. Pun intended)
         </>
@@ -304,7 +305,7 @@ const Projects = () => {
       subtitle: "Real-time Superimposition",
       description: (
         <>
-          No libraries were used, only pure math! 
+          No libraries were used, only pure math!
           <br /><br />
           We take a video with constantly changing perspectives, learning where the edge's for the book are and what are it's dimensions to successfully impose a live video over it.
         </>
@@ -371,8 +372,9 @@ const Projects = () => {
   const [currentCategoryIndex, setCurrentCategoryIndex] = createSignal(0);
   const [isTransitioning, setIsTransitioning] = createSignal(false);
   const [showContent, setShowContent] = createSignal(true);
+  const [direction, setDirection] = createSignal('next');
 
-  let debounceTimer: number | null = null;
+  let debounceTimer: any = null;
 
   const updateCategoryIndex = (offset: number) => {
     // Clear any existing debounce timer
@@ -384,6 +386,8 @@ const Projects = () => {
     if (isTransitioning()) return;
 
     // Start transition
+    const dir = offset > 0 ? 'next' : 'prev';
+    setDirection(dir);
     setIsTransitioning(true);
     setShowContent(false); // Hide content immediately
 
@@ -391,7 +395,7 @@ const Projects = () => {
     debounceTimer = setTimeout(() => {
       // Update the category index
       setCurrentCategoryIndex((prev) => (prev + offset + categories.length) % categories.length);
-      
+
       // Small delay to ensure DOM update, then show content
       setTimeout(() => {
         setShowContent(true);
@@ -401,8 +405,23 @@ const Projects = () => {
     }, 500);
   };
 
-  // Cleanup timer on component unmount
+  // Column Layout Logic
+  const [numColumns, setNumColumns] = createSignal(1);
+
+  const updateColumns = () => {
+    const width = window.innerWidth;
+    if (width < 768) setNumColumns(1);
+    else if (width < 992) setNumColumns(2);
+    else setNumColumns(3);
+  };
+
+  onMount(() => {
+    updateColumns();
+    window.addEventListener('resize', updateColumns);
+  });
+
   onCleanup(() => {
+    window.removeEventListener('resize', updateColumns);
     if (debounceTimer !== null) {
       clearTimeout(debounceTimer);
     }
@@ -414,80 +433,128 @@ const Projects = () => {
   const nextCategory = () => updateCategoryIndex(1);
   const prevCategory = () => updateCategoryIndex(-1);
 
+  const columnProjects = createMemo(() => {
+    const projects = groupedProjects[currentCategory()] || [];
+    const cols = Array.from({ length: numColumns() }, () => [] as typeof projects);
+    projects.forEach((project, i) => {
+      cols[i % numColumns()].push(project);
+    });
+    return cols;
+  });
+
   return (
     <div class="container-fluid">
-      <div class="text-center mb-4">
-        <h2>Software I've Built</h2>
+      <div class="text-center mb-5">
+        <h2 class="section-title">Software I've Built</h2>
       </div>
+
+      <style>
+        {`
+          .clickable-card {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            overflow: hidden; /* Ensure image zoom stays inside */
+          }
+          
+          .clickable-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 255, 255, 0.3);
+            z-index: 10;
+          }
+
+          .clickable-card .card-img-top {
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+          }
+
+          .clickable-card:hover .card-img-top {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+          }
+
+        `}
+      </style>
 
       <div class="nav-grid">
         <button onClick={() => prevCategory()} class="nav-btn" disabled={isTransitioning()}>
-          <span class="arrow">&lt;</span>
+          <span class="arrow"><AiOutlineLeft /></span>
           <span class="nav-text ms-2">{prevCategoryName()}</span>
         </button>
-        
-        <h3 class={`category-title ${showContent() ? 'fade-in' : 'fade-out'}`}>
+
+        <h3 class={`category-title ${showContent()
+          ? (direction() === 'next' ? 'slide-in-right' : 'slide-in-left')
+          : (direction() === 'next' ? 'slide-out-left' : 'slide-out-right')
+          }`}>
           {currentCategory()}
         </h3>
-        
+
         <button onClick={() => nextCategory()} class="nav-btn" disabled={isTransitioning()}>
           <span class="nav-text me-2">{nextCategoryName()}</span>
-          <span class="arrow">&gt;</span>
+          <span class="arrow"><AiOutlineRight /></span>
         </button>
       </div>
 
       {/* Projects Grid for Current Category */}
-      <div class={`projects-container ${showContent() ? 'fade-in' : 'fade-out'}`}>
-        <div class="row g-3 project-row">
-          <For each={groupedProjects[currentCategory()]}>
-            {(project, index) => (
-              <div class="col-md-6 col-lg-4 project-column">
-                <div 
-                  class="card h-100 shadow-sm project-card clickable-card"
-                  style={{ position: 'relative', cursor: 'pointer' }}
-                >
-                  {/* Link indicator */}
-                  <div 
-                    class="card-link-indicator" 
-                    style={{ position: 'absolute', top: '10px', right: '10px', "font-size": "1em" }}
-                  >
-                    🔗
-                  </div>
-                  {project.image && (
-                    project.image.endsWith('.mp4') ? (
-                      <video class="card-img-top" controls autoplay>
-                        <source src={project.image} type="video/mp4" />
-                      </video>
-                    ) : (
-                      <img 
-                        src={project.image} 
-                        class="card-img-top" 
-                        alt={project.title} 
-                        style={{ height: '200px' }} 
-                        onClick={() => window.open(project.code, '_blank')}
-                      />
-                    )
-                  )}
-                  <div class="card-body d-flex flex-column">
-                    <h5 class="card-title"><b>{project.title}</b></h5>
-                    <h6 class="card-subtitle mb-2 font-weight-light">
-                      <small>{project.subtitle}</small>
-                    </h6>
-                    <div class="card-description">
-                      <div class="description-content">
-                        <p class="card-text flex-grow-3">
-                          {project.description}
-                        </p>
-                        <div class="d-flex flex-wrap gap-1 mb-3 mt-2">
-                          <For each={project.tags}>
-                            {(tag) => <span class="badge bg-secondary">{tag}</span>}
-                          </For>
+      <div class={`projects-container ${showContent()
+        ? (direction() === 'next' ? 'slide-in-right' : 'slide-in-left')
+        : (direction() === 'next' ? 'slide-out-left' : 'slide-out-right')
+        }`}>
+        <div class="d-flex" style={{ gap: '1.5rem', "align-items": "flex-start" }}>
+          <For each={columnProjects()}>
+            {(colProjects) => (
+              <div class="d-flex flex-column flex-fill" style={{ gap: '1.5rem', "min-width": 0, width: "0" }}>
+                <For each={colProjects}>
+                  {(project) => (
+                    <div
+                      class="card shadow-sm project-card clickable-card"
+                      style={{ position: 'relative', cursor: 'pointer' }}
+                    >
+                      {/* Link indicator */}
+                      <div
+                        class="card-link-indicator"
+                        style={{ position: 'absolute', top: '10px', right: '10px', "font-size": "1em" }}
+                      >
+                        🔗
+                      </div>
+                      {project.image && (
+                        project.image.endsWith('.mp4') ? (
+                          <video class="card-img-top" controls autoplay>
+                            <source src={project.image} type="video/mp4" />
+                          </video>
+                        ) : (
+                          <img
+                            src={project.image}
+                            class="card-img-top"
+                            alt={project.title}
+                            style={{ height: '200px' }}
+                            onClick={() => window.open(project.code, '_blank')}
+                          />
+                        )
+                      )}
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><b>{project.title}</b></h5>
+                        <h6 class="card-subtitle mb-2 font-weight-light">
+                          <small>{project.subtitle}</small>
+                        </h6>
+                        <div class="card-description">
+                          <div class="description-content">
+                            <p class="card-text flex-grow-3">
+                              {project.description}
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mb-3 mt-2">
+                              <For each={project.tags}>
+                                {(tag) => <span class="badge bg-secondary">{tag}</span>}
+                              </For>
+                            </div>
+                          </div>
                         </div>
+                        <div class="description-fade"></div>
                       </div>
                     </div>
-                    <div class="description-fade"></div>
-                  </div>
-                </div>
+                  )}
+                </For>
               </div>
             )}
           </For>

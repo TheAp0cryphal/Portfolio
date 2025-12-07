@@ -11,6 +11,73 @@ interface AsciiItem {
     created_at: string;
 }
 
+const TiltAsciiCard: Component<{ item: AsciiItem, formatDate: (d: string) => string }> = (props) => {
+    let cardRef: HTMLDivElement | undefined;
+    const [transform, setTransform] = createSignal("");
+    const [transition, setTransition] = createSignal("transform 0.2s ease-out");
+
+    const handleMouseMove = (e: MouseEvent) => {
+        if (!cardRef) return;
+        const rect = cardRef.getBoundingClientRect();
+        const x = e.clientX - rect.left; // x position within the element
+        const y = e.clientY - rect.top;  // y position within the element
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10deg
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        setTransition("transform 0.1s ease-out"); // Quick response
+        setTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`);
+    };
+
+    const handleMouseLeave = () => {
+        setTransition("transform 0.5s ease-out"); // Smooth return
+        setTransform("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
+    };
+
+    return (
+        <div
+            ref={cardRef}
+            class="ascii-tile"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                background: 'rgba(0, 0, 0, 0.4)',
+                "backdrop-filter": 'blur(5px)',
+                "border-radius": '8px',
+                padding: '10px',
+                display: 'flex',
+                "flex-direction": 'column',
+                "align-items": 'center',
+                overflow: 'hidden',
+                transform: transform(),
+                transition: transition(),
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                "box-shadow": "0 10px 20px rgba(0,0,0,0.3)"
+            }}
+        >
+            <div style={{ "flex-grow": 1, display: 'flex', "align-items": 'center', "justify-content": 'center', width: '100%', overflow: 'hidden', "pointer-events": "none" }}>
+                <AsciiArt content={props.item.ascii_text} style={{ "font-size": "6px", "line-height": "6px" }} className="text-success" />
+            </div>
+            <div
+                class="mt-3 text-center"
+                style={{
+                    "font-family": 'monospace',
+                    color: 'rgba(255, 255, 255, 0.5)',
+                    "font-size": '0.8rem',
+                    "border-top": '1px solid rgba(255, 255, 255, 0.1)',
+                    width: '100%',
+                    "padding-top": '5px',
+                    "pointer-events": "none"
+                }}
+            >
+                {props.formatDate(props.item.created_at)}
+            </div>
+        </div>
+    );
+};
+
 const AsciiBoard: Component = () => {
     const [items, setItems] = createSignal<AsciiItem[]>([]);
     const [isDragging, setIsDragging] = createSignal(false);
@@ -107,38 +174,7 @@ const AsciiBoard: Component = () => {
             >
                 <For each={items()}>
                     {(item) => (
-                        <div
-                            class="ascii-tile"
-                            style={{
-                                background: 'rgba(0, 0, 0, 0.4)',
-                                "backdrop-filter": 'blur(5px)',
-                                "border-radius": '8px',
-                                padding: '10px',
-                                display: 'flex',
-                                "flex-direction": 'column',
-                                "align-items": 'center',
-                                overflow: 'hidden',
-                                transition: 'transform 0.2s',
-                                border: '1px solid rgba(255, 255, 255, 0.1)'
-                            }}
-                        >
-                            <div style={{ "flex-grow": 1, display: 'flex', "align-items": 'center', "justify-content": 'center', width: '100%', overflow: 'hidden' }}>
-                                <AsciiArt content={item.ascii_text} style={{ "font-size": "6px", "line-height": "6px" }} className="text-success" />
-                            </div>
-                            <div
-                                class="mt-3 text-center"
-                                style={{
-                                    "font-family": 'monospace',
-                                    color: 'rgba(255, 255, 255, 0.5)',
-                                    "font-size": '0.8rem',
-                                    "border-top": '1px solid rgba(255, 255, 255, 0.1)',
-                                    width: '100%',
-                                    "padding-top": '5px'
-                                }}
-                            >
-                                {formatDate(item.created_at)}
-                            </div>
-                        </div>
+                        <TiltAsciiCard item={item} formatDate={formatDate} />
                     )}
                 </For>
             </div>
