@@ -7,13 +7,15 @@ import Timeline from "./components/Timeline";
 import AsciiBoard from './components/AsciiBoard';
 import ScrollReveal from "./components/ScrollReveal";
 
-import { AiFillGithub, AiFillLinkedIn, AiFillMailIcon } from "./utils/IconUtil";
+import { AiFillGithub, AiFillLinkedIn, AiFillMailIcon, OctahedronIcon } from "./utils/IconUtil";
 import Skills from "./components/Skills";
 import TwinklingStars from "./components/TwinklingStars";
 import Clouds from "./components/Clouds";
 import Comets from "./components/Comets";
 
+import { createSignal } from "solid-js";
 const App = () => {
+  const [showGuestbook, setShowGuestbook] = createSignal(false);
   return (
     <div>
       <div class="gradient-background">
@@ -67,31 +69,47 @@ const App = () => {
         <img class="trees" src="/assets/trees.png" style={{ height: "auto", width: "100%" }} />
       </div>
       <main>
-        {/* Ascii Board Section */}
-        <section id="ascii-board" style={{ position: 'relative', "z-index": 10, "background": "transparent", "box-shadow": "none", "backdrop-filter": "none" }}>
-          <ScrollReveal>
-            <AsciiBoard />
-          </ScrollReveal>
-        </section>
+        {/* About Section */}
         <section id="about">
           <ScrollReveal>
             <About />
           </ScrollReveal>
         </section>
+
+        {/* Experience Section */}
         <section id="experience">
           <Timeline />
         </section>
+
+        {/* Projects Section */}
         <section id="projects">
           <ScrollReveal>
             <Projects />
           </ScrollReveal>
         </section>
+
+        {/* Contact Section */}
         <section id="contact">
           <ScrollReveal>
             <Contact />
           </ScrollReveal>
         </section>
       </main>
+
+      {/* Guestbook Modal Overlay */}
+      <div class={`guestbook-overlay ${showGuestbook() ? 'visible' : ''}`}>
+        <div class="guestbook-backdrop" onClick={() => setShowGuestbook(false)}></div>
+        <div class="guestbook-modal">
+          <button class="close-btn" onClick={() => setShowGuestbook(false)}>×</button>
+          <AsciiBoard />
+        </div>
+      </div>
+
+      {/* Floating Action Button */}
+      <button class="guestbook-fab" onClick={() => setShowGuestbook(true)} title="Sign Guestbook">
+        <OctahedronIcon />
+      </button>
+
       <Footer />
     </div>
   );
