@@ -48,7 +48,7 @@ const Timeline = () => {
           {
             startYear: "September 2024",
             endYear: "April 2025",
-            title: "...",
+            title: "Founder",
             company: "Solo Stealth Initiative",
             description: ["Working on something cool with LLMs in Education"],
             logo: "https://media.licdn.com/dms/image/v2/C4E0BAQEHs1C2gRRukA/company-logo_200_200/company-logo_200_200/0/1630652289773/stealth_startup_tlv_logo?e=1766620800&v=beta&t=PY-ML_4nVqZyqGMKhU2sFDgiL2MBbfv9qWWwxc-CmZ8"
