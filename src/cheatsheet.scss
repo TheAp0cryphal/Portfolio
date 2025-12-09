@@ -1566,12 +1566,10 @@ p {
   width: 100%;
   height: 100px;
   background: linear-gradient(to bottom,
-      color.change($light, $alpha: 0.1),
-      color.change($light, $alpha: 0.2),
-      color.change($light, $alpha: 0.4),
-      color.change($light, $alpha: 0.6, $lightness: 15%),
-      color.change($light, $alpha: 0.8, $lightness: 20%),
-    );
+      transparent,
+      rgba(0, 0, 0, 0.8) 70%,
+      rgba($accent, 0.05) 100%);
+  border-bottom: 1px solid rgba($accent, 0.1);
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
