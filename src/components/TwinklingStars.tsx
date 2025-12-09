@@ -58,8 +58,8 @@ const TwinklingStars: Component = () => {
                                 bottom: `${star.bottom}%`,
                                 width: `${star.size}px`,
                                 height: `${star.size}px`,
-                                "animation-duration": `${star.duration}s`,
-                                "animation-delay": `${star.delay}s`,
+                                "animation-duration": `calc(${star.duration}s / var(--speed-mult))`,
+                                "animation-delay": `calc(${star.delay}s / var(--speed-mult))`,
                                 opacity: star.opacity
                             }}
                         />
