@@ -10,6 +10,18 @@ interface TimelineItem {
 }
 
 const Timeline = () => {
+  const formatDate = (dateStr: string) => {
+    const parts = dateStr.split(' ');
+    if (parts.length >= 2) {
+      const month = parts[0].substring(0, 3).toUpperCase();
+      const year = parts[1].slice(-2);
+      return {
+        month, year: + year
+      };
+    }
+    return { month: '', year: dateStr }; // Fallback
+  };
+
   return (
     <div class="container py-5">
       <div class="text-center mb-5">
@@ -23,7 +35,7 @@ const Timeline = () => {
             title: "Software Developer",
             company: "Dayforce",
             description: ["Building the world's best strategic workforce planning software."],
-            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhKrC2g1BreoMxffTjIozgDhRzgA__mAN_Cw&amp;s"
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhKrC2g1BreoMxffTjIozgDhRzgA__mAN_Cw&s"
           },
           {
             startYear: "May 2025",
@@ -36,10 +48,10 @@ const Timeline = () => {
           {
             startYear: "September 2024",
             endYear: "April 2025",
-            title: "Working on something cool with LLMs in Education",
-            company: "Independent Stealth Initiative 🤫",
-            description: [],
-            logo: "https://media.licdn.com/dms/image/v2/C4E0BAQHMGqnlWxYhYw/company-logo_200_200/company-logo_200_200/0/1630589017221?e=2147483647&v=beta&t=vkzthj8vACOWSp5rXgMROAwcuVNZPgsXwtulzrVFZ3w"
+            title: "...",
+            company: "Solo Stealth Initiative",
+            description: ["Working on something cool with LLMs in Education"],
+            logo: "https://media.licdn.com/dms/image/v2/C4E0BAQEHs1C2gRRukA/company-logo_200_200/company-logo_200_200/0/1630652289773/stealth_startup_tlv_logo?e=1766620800&v=beta&t=PY-ML_4nVqZyqGMKhU2sFDgiL2MBbfv9qWWwxc-CmZ8"
           },
           {
             startYear: "May 2024",
@@ -50,7 +62,7 @@ const Timeline = () => {
               { type: 'text', content: 'Built a GenAI application where an LLM behaves like a "GOD" influencing the game state in real time.' },
               { type: 'video', url: 'L_jhwsPwRDY' }
             ],
-            logo: "https://yt3.googleusercontent.com/1f0Y_lcNtQP2GdPcl-p26tMhlN_3ABtLdkZW96BjsPpRGaZPZO0lloduzM-bGgn4hLc70uHnlQ=s900-c-k-c0x00ffffff-no-rj"
+            logo: "https://upload.wikimedia.org/wikipedia/commons/7/77/Cdm_logo.png"
           },
           {
             startYear: "January 2023",
@@ -83,7 +95,7 @@ const Timeline = () => {
               { type: 'text', content: 'The Cradle Platform is designed to support health care delivery for pregnant women and other patients in developing countries, with a focus on the Bidi Bidi refugee settlement in Uganda and health centres across Sierra Leone. SFU Software Systems and Computer Science students have worked with members of Kings College London to design and implement the platform. ' },
               { type: 'image', url: './assets/cradle.jpeg' }
             ],
-            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcwCtmq0hcH_4aRFgeBqqFDr2VHlZOyRekQA&s"
+            logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/SFU-block-logo.svg/2560px-SFU-block-logo.svg.png"
           },
           {
             startYear: "April 2022",
@@ -93,48 +105,59 @@ const Timeline = () => {
             description: [
               { type: 'text', content: 'Developed Python automation scripts to categorize news content using AI-based real-time video stream segmentation' },
             ],
-            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhC34ibdO77aCWmgSVzLZ51RWDXK68-3fTQQ&s"
+            logo: "https://awsmp-logos.s3.amazonaws.com/seller-yax3sv3tx2agu/8ff497a3e87e0d09081d2b5235fcbebc.png"
           },
-        ] as TimelineItem[]).map((item, index) => (
-          <ScrollReveal class={`timeline-item ${index % 2 === 0 ? 'from-left' : 'from-right'}`}>
-            <div class="timeline-marker">
-              {item.logo ? (
-                <img src={item.logo} alt={`${item.company} logo`} />
-              ) : (
-                <span>{item.company.charAt(0)}</span>
-              )}
-            </div>
-            <div class="timeline-badge">{item.startYear} - {item.endYear}</div>
-            <div class="timeline-content shadow-sm p-4">
-              <h4><b>{item.company}</b></h4>
-              <h6 class="text-warning">{item.title}</h6>
-              {item.description.map((desc) => (
-                typeof desc === 'string' ? <p>{desc}</p> :
-                  desc.type === 'text' ? <p style={{ 'white-space': 'pre-line' }}>{desc.content}</p> :
-                    desc.type === 'video' ? (
-                      <div class="ratio ratio-16x9">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${desc.url}`}
-                          title={item.title}
-                          loading="lazy"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen>
-                        </iframe>
-                      </div>
-                    ) : desc.type === 'image' && (
-                      <div class="image-container pt-2">
-                        <a href={desc.url} target="_blank" rel="noopener noreferrer">
-                          <img src={desc.url} alt="Timeline image" class="img-fluid" />
-                        </a>
-                      </div>
-                    )
-              ))}
-            </div>
-          </ScrollReveal>
-        ))}
+        ] as TimelineItem[]).map((item, index) => {
+          const dateObj = formatDate(item.startYear);
+          return (
+            <ScrollReveal class={`timeline-row ${index % 2 === 0 ? 'row-left' : 'row-right'}`}>
+              <div class="timeline-meta">
+                <div class="date-stack">
+                  <span class="date-month">{dateObj.month}</span>
+                  <span class="date-year">{dateObj.year}</span>
+                </div>
+                <div class="meta-logo-wrapper">
+                  {item.logo ? (
+                    <img src={item.logo} alt={`${item.company} logo`} class="meta-logo" />
+                  ) : (
+                    <span class="meta-initial">{item.company.charAt(0)}</span>
+                  )}
+                </div>
+                <h3 class="meta-company">{item.company}</h3>
+              </div>
+
+              <div class="timeline-body glass-panel">
+                <h4 class="body-title">{item.title}</h4>
+                <div class="body-content">
+                  {item.description.map((desc) => (
+                    typeof desc === 'string' ? <p>{desc}</p> :
+                      desc.type === 'text' ? <p style={{ 'white-space': 'pre-line' }}>{desc.content}</p> :
+                        desc.type === 'video' ? (
+                          <div class="ratio ratio-16x9">
+                            <iframe
+                              src={`https://www.youtube.com/embed/${desc.url}`}
+                              title={item.title}
+                              loading="lazy"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen>
+                            </iframe>
+                          </div>
+                        ) : desc.type === 'image' && (
+                          <div class="image-container pt-2">
+                            <a href={desc.url} target="_blank" rel="noopener noreferrer">
+                              <img src={desc.url} alt="Timeline image" class="img-fluid" />
+                            </a>
+                          </div>
+                        )
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          );
+        })}
       </div>
     </div>
   );
 };
 
-export default Timeline; 
+export default Timeline;
