@@ -14,7 +14,7 @@ const Timeline = () => {
     const parts = dateStr.split(' ');
     if (parts.length >= 2) {
       const month = parts[0].substring(0, 3).toUpperCase();
-      const year = parts[1].slice(-2);
+      const year = parts[1].slice(0);
       return {
         month, year: + year
       };
@@ -43,7 +43,7 @@ const Timeline = () => {
             title: "Product Software Engineer",
             company: "Agentnoon",
             description: ["Intuitive AI-native org design platform for building the workforce of the future."],
-            logo: "https://lh3.googleusercontent.com/p/AF1QipOhfmZ2fNY5tKC-rLA6hyqZWtFzJ-3b8sMp1j1i=s1360-w1360-h1020-rw"
+            logo: "https://media.licdn.com/dms/image/v2/D560BAQF7biiMvgsOOA/company-logo_200_200/company-logo_200_200/0/1692382941628/agentnoon_logo?e=2147483647&v=beta&t=nl_740egw1F0CPKWK9DDdOIeN5K_KdscGPLoQhexpx8"
           },
           {
             startYear: "September 2024",
@@ -62,7 +62,7 @@ const Timeline = () => {
               { type: 'text', content: 'Built a GenAI application where an LLM behaves like a "GOD" influencing the game state in real time.' },
               { type: 'video', url: 'L_jhwsPwRDY' }
             ],
-            logo: "https://upload.wikimedia.org/wikipedia/commons/7/77/Cdm_logo.png"
+            logo: "https://yt3.googleusercontent.com/1f0Y_lcNtQP2GdPcl-p26tMhlN_3ABtLdkZW96BjsPpRGaZPZO0lloduzM-bGgn4hLc70uHnlQ=s900-c-k-c0x00ffffff-no-rj"
           },
           {
             startYear: "January 2023",
