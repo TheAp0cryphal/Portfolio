@@ -45,6 +45,7 @@ const TiltAsciiCard: Component<{ item: AsciiItem, formatDate: (d: string) => str
         <div
             style={{
                 width: isHovering() ? '350px' : '200px',
+                "max-width": "100%", // Prevent overflow on small screens
                 "aspect-ratio": "1 / 1",
                 transition: "width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)",
                 "z-index": isHovering() ? 10 : 1, // Slight boost for sorting

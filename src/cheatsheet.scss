@@ -9,12 +9,21 @@ $dark: #0A1728; // Extra dark shade (currently unused)
 $success: #4caf50; // Success state (green)
 
 // Base styles
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 body {
   zoom: 100%;
   font-family: 'Roboto', sans-serif;
   color: $secondary;
   background-color: #000102;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 // Dark, starry gradient background
@@ -1300,6 +1309,7 @@ section {
     padding: 10px 40px;
     position: relative;
     width: 50%;
+    margin-bottom: 30px;
 
     &:nth-child(odd) {
       left: 0;
@@ -1336,6 +1346,36 @@ section {
     border-radius: 4px;
     font-weight: 600;
     margin-bottom: 10px;
+  }
+
+  @media (max-width: 767px) {
+    &:before {
+      left: 30px;
+    }
+
+    .timeline-item {
+      width: 100%;
+      padding-left: 80px;
+      padding-right: 25px;
+
+      &:nth-child(odd) {
+        padding-right: 25px;
+
+        .timeline-marker {
+          right: auto;
+          left: 0;
+        }
+      }
+
+      &:nth-child(even) {
+        left: 0;
+        padding-left: 80px;
+
+        .timeline-marker {
+          left: 0;
+        }
+      }
+    }
   }
 }
 
@@ -1833,6 +1873,7 @@ p {
   min-height: 500px;
   perspective: 1000px;
   width: 100%;
+  overflow: hidden; // Contain the wide beam
 }
 
 // The Projector Device
