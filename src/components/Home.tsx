@@ -48,6 +48,19 @@ const Home = () => {
               Resume 🔗
             </a>
           </div>
+
+          <div
+            class="mt-5 text-center"
+            style={{
+              opacity: showButtons() ? 0.7 : 0,
+              transition: "opacity 1s ease-in-out",
+              "transition-delay": "1.5s"
+            }}
+          >
+            <p class="small text-white-50 fst-italic">
+              Clouds in your way? Send them flying with a drag of your mouse!
+            </p>
+          </div>
         </div>
       </div>
     </div>
