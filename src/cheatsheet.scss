@@ -3,7 +3,7 @@
 
 $primary: #f8f8f8; // Used for main brand text, .btn-primary background
 $secondary: #e5f1fb; // General body text
-$accent: #6be4ef9d; // Accent color for nav link hover underline, highlights
+$accent: #ffa13cfe; // Accent color for nav link hover underline, highlights
 $light: #0B1F36; // Dark "background" color for <body> (naming kept for JS compatibility)
 $dark: #0A1728; // Extra dark shade (currently unused)
 $success: #4caf50; // Success state (green)
@@ -1461,7 +1461,7 @@ section {
       align-self: stretch; // Fill the full height of the 2 rows
 
       .date-month {
-        font-size: 3rem; // Very Big
+        font-size: 3.3rem; // Very Big
         font-weight: 800;
         text-transform: uppercase;
         color: $accent;
