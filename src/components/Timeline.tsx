@@ -23,7 +23,7 @@ const Timeline = () => {
   };
 
   return (
-    <div class="container py-5">
+    <div class="container-fluid py-5">
       <div class="text-center mb-5">
         <h2 class="section-title">Professional Experience</h2>
       </div>
@@ -57,7 +57,7 @@ const Timeline = () => {
             startYear: "May 2024",
             endYear: "September 2024",
             title: "GenAI Application Developer",
-            company: "Centre for Digital Media",
+            company: "Centre of Digital Media",
             description: [
               { type: 'text', content: 'Built a GenAI application where an LLM behaves like a "GOD" influencing the game state in real time.' },
               { type: 'video', url: 'L_jhwsPwRDY' }
@@ -68,7 +68,7 @@ const Timeline = () => {
             startYear: "January 2023",
             endYear: "April 2024",
             title: "Software Engineering Co-op",
-            company: "Rivian Automotive Inc.",
+            company: "Rivian Automotive",
             description: [
               {
                 type: 'text', content: `New Rear Screen Display - Spotlight Infotainment Project for Q1 2024 shipped to 100,000+ users pre-releasing OTA by 4 weeks.

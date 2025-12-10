@@ -1291,7 +1291,7 @@ section {
 // Premium Journey / Zig-Zag Timeline
 .timeline {
   position: relative;
-  max-width: 1100px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 60px 0;
 
@@ -1417,53 +1417,61 @@ section {
   .timeline-meta {
     flex: 1;
     display: grid;
-    gap: 0 20px;
+    gap: 0 30px; // Gap between columns
     align-content: start;
     min-width: 400px;
 
-    // Standard Desktop Layout: [Logo/Company Left] | [Date Right]
+    // Grid Layout: [Logo Top-Left] | [Company Bottom-Left] | [Date Right Span]
     grid-template-areas:
       "logo date"
       "company date";
     grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto; // Rows will size to fit content
+    align-items: stretch; // Stretch mainly for the Date column
 
     .date-stack {
       grid-area: date;
-      display: inline-flex;
+      display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: center; // Center vertically within the spanned height
+      align-items: flex-end;
       margin-bottom: 0;
-      line-height: 0.9;
-      justify-self: end; // Always on right
-      align-self: center;
+      line-height: 0.85; // Tight packing
+      justify-self: end;
+      align-self: stretch; // Fill the full height of the 2 rows
 
       .date-month {
-        font-size: 3rem;
+        font-size: 4rem; // Very Big
         font-weight: 800;
         text-transform: uppercase;
         color: $accent;
-        margin-bottom: 0;
-        text-align: center;
+        margin-bottom: 5px; // Tiny gap
+        text-align: right;
         letter-spacing: 1px;
-        text-indent: 5px;
+        line-height: 0.8;
+        margin-top: 5px; // Optical adjustment
       }
 
       .date-year {
-        font-size: 2.8rem;
+        font-size: 4rem; // Very Big
         font-weight: 800;
         color: $accent;
         letter-spacing: -2px;
+        line-height: 0.8;
+        margin: 0;
       }
     }
 
     .meta-logo-wrapper {
       grid-area: logo;
-      justify-self: start; // Align Left
-      width: 80px;
-      height: 80px;
-      margin-bottom: 5px;
+      justify-self: start;
+      align-self: start; // Crucial: Align to TOP of the "logo" row
+      width: 75px;
+      height: 75px;
+      margin-top: 15px;
+      margin-bottom: 0; // Grid gap handles spacing
       background: rgba(255, 255, 255, 1);
-      border-radius: 20px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1471,13 +1479,9 @@ section {
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(5px);
       transition: transform 0.3s ease;
-
-
     }
 
     .meta-logo {
-      grid-area: logo; // Not strictly needed as wrapper handles area, but okay. wrapper handles position.
-      // Logo styling
       width: 60px;
       height: 60px;
       object-fit: contain;
@@ -1492,10 +1496,11 @@ section {
 
     .meta-company {
       grid-area: company;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       font-weight: 800;
       color: white;
-      margin: 0;
+      margin-top: 10px;
+      align-self: end; // Crucial: Align to BOTTOM of the "company" row
 
       line-height: 1.2;
       background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
@@ -1581,9 +1586,8 @@ section {
       .meta-logo-wrapper {
         grid-area: logo;
         margin: 0;
-        width: 100%;
+        width: 90%;
         height: auto; // Fill grid cell
-        min-height: 100px;
         aspect-ratio: 1; // Keep square-ish if desired, or just fill
 
         .meta-logo {
@@ -1615,7 +1619,7 @@ section {
 
       .meta-company {
         grid-area: company;
-        font-size: 1.3rem;
+        font-size: 1.9rem;
         margin: 0;
         text-align: right; // Align under date
         align-self: start; // Top of its cell
