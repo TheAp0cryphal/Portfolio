@@ -68,12 +68,15 @@ const About = () => {
                   I keep up-to-date with the latest developments, observing and building upon the rapid progress that's happening each day.
                 </p>
                 <p>
-                  I am a <span class="marked-text">π-shaped software engineer</span> with deep vertical expertise in Mobile Development, Backend Systems, and AI/ML.
-                  My breadth spans embedded systems, full-stack development, and UI/UX design. I've had the chance to work on everything from building
-                  vehicle infotainment platforms at Rivian to creating AI-powered speech recognition and generative tools for a gaming startup.
-                  Along the way, I've engineered backend solutions using Python and Azure, and developed
-                  robust mobile apps in Kotlin and Java that have reached thousands of users.
+                  I have developed core expertise in Mobile Development, Fullstack Development and AI/ML.
+                  My breadth spans embedded systems, cloud computing and UI/UX design. Crucially, however, I am never limited by technology stacks. As a language-agnostic engineer, I view technology as a tool and
+                  as long as I have a problem to solve, I can navigate resources efficiently to find a solution. All my efforts are directed towards delivering value to the end-user.
+                  I've worked on a wide range of projects and have delivered high quality software to <span class="marked-text">thousands of end-users</span> generating business value worth <span class="marked-text">millions of dollars</span>.
                 </p>
+                <p>
+                  Currently, I'm working at Dayforce as a Software Developer for the Strategic Workforce Planning platform.
+                </p>
+
               </div>
               <div class="col-md-6">
                 <p>
