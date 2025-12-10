@@ -448,34 +448,7 @@ const Projects = () => {
         <h2 class="section-title">Software I've Built</h2>
       </div>
 
-      <style>
-        {`
-          .clickable-card {
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            overflow: hidden; /* Ensure image zoom stays inside */
-          }
-          
-          .clickable-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 203, 69, 0.15) !important;
-            border-color: rgba(255, 203, 69, 0.3);
-            z-index: 10;
-          }
 
-          .clickable-card .card-img-top {
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
-          }
-
-          .clickable-card:hover .card-img-top {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-          }
-
-        `}
-      </style>
 
       <div class="nav-grid">
         <button onClick={() => prevCategory()} class="nav-btn" disabled={isTransitioning()}>

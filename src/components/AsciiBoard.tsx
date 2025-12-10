@@ -194,8 +194,7 @@ const AsciiBoard: Component = () => {
                     }}>
                         Visitors are encouraged to leave a mark here by dropping an image to be converted to an ascii-art
                     </p>
-                    <p style={{
-                        color: '#FFCB45',
+                    <p class="text-accent" style={{
                         "font-size": "1.5rem",
                         "font-family": "monospace",
                         "-webkit-font-smoothing": "antialiased"

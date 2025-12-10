@@ -3,7 +3,7 @@
 
 $primary: #f8f8f8; // Used for main brand text, .btn-primary background
 $secondary: #e5f1fb; // General body text
-$accent: #FFCB45; // Accent color for nav link hover underline, highlights
+$accent: #6be4ef9d; // Accent color for nav link hover underline, highlights
 $light: #0B1F36; // Dark "background" color for <body> (naming kept for JS compatibility)
 $dark: #0A1728; // Extra dark shade (currently unused)
 $success: #4caf50; // Success state (green)
@@ -744,6 +744,10 @@ body {
   color: black !important
 }
 
+.text-accent {
+  color: $accent !important;
+}
+
 .marked-text {
   color: $accent;
   position: relative;
@@ -1457,7 +1461,7 @@ section {
       align-self: stretch; // Fill the full height of the 2 rows
 
       .date-month {
-        font-size: 4rem; // Very Big
+        font-size: 3rem; // Very Big
         font-weight: 800;
         text-transform: uppercase;
         color: $accent;
@@ -1712,6 +1716,8 @@ section {
 
 .submit-button {
   transition: all 0.4s ease;
+  border: 1px solid $accent; // Default border
+  color: $accent; // Default text color
 
   &.ready-to-send {
     background-color: rgba($accent, 0.1);
@@ -1734,6 +1740,30 @@ section {
     &:hover {
       transform: none;
     }
+  }
+}
+
+.clickable-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 15px rgba($accent, 0.15) !important;
+    border-color: rgba($accent, 0.3);
+    z-index: 10;
+  }
+
+  .card-img-top {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+  }
+
+  &:hover .card-img-top {
+    transform: scale(1.05);
+    filter: brightness(1.1);
   }
 }
 

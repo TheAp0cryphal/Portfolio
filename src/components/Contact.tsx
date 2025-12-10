@@ -125,7 +125,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              class={`btn btn-outline-warning mt-2 submit-button ${isFormValid() ? 'ready-to-send' : 'not-ready'}`}
+              class={`btn mt-2 submit-button ${isFormValid() ? 'ready-to-send' : 'not-ready'}`}
               disabled={!isFormValid()}
             >
               {isFormValid() ? "Send via Email 🚀" : "Fill out the form above ⬆"}
