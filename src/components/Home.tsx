@@ -2,9 +2,7 @@ import { createSignal, onMount } from "solid-js";
 
 const Home = () => {
   const [displayedText, setDisplayedText] = createSignal("");
-  const [showSubtext, setShowSubtext] = createSignal(false);
-  const [showButtons, setShowButtons] = createSignal(false);
-
+  const [showFooter, setShowFooter] = createSignal(false);
   const fullText = "Hi, I'm Tanishk";
 
   const typeText = async () => {
@@ -12,10 +10,7 @@ const Home = () => {
       setDisplayedText(fullText.slice(0, i));
       await new Promise(resolve => setTimeout(resolve, 100));
     }
-
-    // Show subtext after typing is complete
-    setTimeout(() => setShowSubtext(true), 500);
-    setTimeout(() => setShowButtons(true), 1000);
+    setTimeout(() => setShowFooter(true), 1000);
   };
 
   onMount(() => {
@@ -23,7 +18,7 @@ const Home = () => {
   });
 
   return (
-    <div class="container text-center fade-in">
+    <div class="container text-center">
       <div class="row align-items-center justify-content-center">
         <div class="col-lg-6 text-lg-start">
 
@@ -32,7 +27,7 @@ const Home = () => {
             <span class="typing-cursor">|</span>
           </h1>
 
-          <div class={`subtext-container ${showSubtext() ? 'slide-in' : ''}`}>
+          <div class="subtext-container">
             <p class="lead mb-4 text-center">
               I am a language agnostic <span class="marked-text">software engineer </span>
               building software that creates <span class="marked-text">value.</span>
@@ -40,7 +35,7 @@ const Home = () => {
             <p class="lead mb-4 text-center">Mobile | AI / ML | Backend | Frontend | UI / UX </p>
           </div>
 
-          <div class={`button-container d-flex gap-3 justify-content-center ${showButtons() ? 'bounce-in' : ''}`}>
+          <div class="button-container d-flex gap-3 justify-content-center">
             <a href="#projects" class="btn btn-primary black-text pulse-hover">
               View My Work
             </a>
@@ -52,7 +47,7 @@ const Home = () => {
           <div
             class="mt-5 text-center"
             style={{
-              opacity: showButtons() ? 0.7 : 0,
+              opacity: showFooter() ? 0.7 : 0,
               transition: "opacity 1s ease-in-out",
               "transition-delay": "1.5s"
             }}
