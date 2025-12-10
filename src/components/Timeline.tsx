@@ -67,8 +67,8 @@ const Timeline = () => {
           {
             startYear: "January 2023",
             endYear: "April 2024",
-            title: "Software Engineering Co-op",
-            company: "Rivian Automotive",
+            title: "Software Engineer Co-op",
+            company: "Rivian Automotive Inc.",
             description: [
               {
                 type: 'text', content: `New Rear Screen Display - Spotlight Infotainment Project for Q1 2024 shipped to 100,000+ users pre-releasing OTA by 4 weeks.

@@ -1308,8 +1308,24 @@ section {
     position: relative;
     opacity: 1; // Handled by children for parallax effect
 
+    // Subtle visual divider between items
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 15%;
+      width: 70%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba($accent, 0.3) 50%, transparent 100%);
+      pointer-events: none;
+    }
+
     &:last-child {
       margin-bottom: 0;
+
+      &::after {
+        display: none;
+      }
     }
 
     // Desktop: Alternating Layout
@@ -1466,8 +1482,8 @@ section {
       grid-area: logo;
       justify-self: start;
       align-self: start; // Crucial: Align to TOP of the "logo" row
-      width: 75px;
-      height: 75px;
+      width: 70px;
+      height: 70px;
       margin-top: 15px;
       margin-bottom: 0; // Grid gap handles spacing
       background: rgba(255, 255, 255, 1);
@@ -1528,10 +1544,10 @@ section {
     }
 
     .body-title {
-      font-size: 1.3rem;
+      font-size: 2rem;
       color: $accent;
       margin-bottom: 20px;
-      font-weight: 600;
+      font-weight: 800;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       padding-bottom: 15px;
     }
@@ -1638,7 +1654,7 @@ section {
     padding: 25px;
 
     .body-title {
-      font-size: 1.1rem;
+      font-size: 1.5rem;
     }
   }
 }
