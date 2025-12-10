@@ -2185,6 +2185,7 @@ p {
   perspective: 1000px;
   width: 100%;
   overflow: hidden; // Contain the wide beam
+  padding-top: 20px; // Prevent float animation cut-off
 }
 
 // The Projector Device
