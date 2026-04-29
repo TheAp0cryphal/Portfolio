@@ -1311,6 +1311,9 @@ section {
     margin-bottom: 100px;
     position: relative;
     opacity: 1; // Handled by children for parallax effect
+    transform: none; // Override .scroll-reveal default
+    transition: none; // Override .scroll-reveal default
+    will-change: auto;
 
     // Subtle visual divider between items
     &::after {
@@ -1364,12 +1367,6 @@ section {
 
     // ScrollReveal Transition Base
     // transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-
-    // Default opacity for container is 1 so children can handle their own
-    opacity: 1;
-    transform: none; // Override .scroll-reveal default
-    transition: none; // Override .scroll-reveal default
-    will-change: auto;
 
     .timeline-meta,
     .timeline-body {
@@ -1525,6 +1522,7 @@ section {
       line-height: 1.2;
       background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }
@@ -1639,7 +1637,7 @@ section {
 
       .meta-company {
         grid-area: company;
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         margin-top: 10px;
         text-align: right; // Align under date
         align-self: start; // Top of its cell

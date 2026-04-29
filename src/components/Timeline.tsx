@@ -51,7 +51,7 @@ const Timeline = () => {
             title: "Founder",
             company: "Solo Stealth Initiative",
             description: ["Working on something cool with LLMs in Education"],
-            logo: "https://media.licdn.com/dms/image/v2/C4E0BAQEHs1C2gRRukA/company-logo_200_200/company-logo_200_200/0/1630652289773/stealth_startup_tlv_logo?e=1766620800&v=beta&t=PY-ML_4nVqZyqGMKhU2sFDgiL2MBbfv9qWWwxc-CmZ8"
+            logo: "https://media.licdn.com/dms/image/v2/C4E0BAQEHs1C2gRRukA/company-logo_200_200/company-logo_200_200/0/1630652289773/stealth_startup_tlv_logo?e=2147483647&v=beta&t=goldEnKkZ03QaU2vOzyBTkydCgtBFnzW6NYBI2fp11I"
           },
           {
             startYear: "May 2024",
@@ -95,7 +95,7 @@ const Timeline = () => {
               { type: 'text', content: 'The Cradle Platform is designed to support health care delivery for pregnant women and other patients in developing countries, with a focus on the Bidi Bidi refugee settlement in Uganda and health centres across Sierra Leone. SFU Software Systems and Computer Science students have worked with members of Kings College London to design and implement the platform. ' },
               { type: 'image', url: './assets/cradle.jpeg' }
             ],
-            logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/SFU-block-logo.svg/2560px-SFU-block-logo.svg.png"
+            logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/SFU-block-logo.svg/1280px-SFU-block-logo.svg.png"
           },
           {
             startYear: "April 2022",
