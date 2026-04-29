@@ -53,7 +53,7 @@ const Home = () => {
             }}
           >
             <p class="small text-white-50 fst-italic">
-              Clouds in your way? Send them flying with a drag of your mouse!
+              Clouds in your way? Click to poof them away, or send them flying with a drag!
             </p>
           </div>
         </div>

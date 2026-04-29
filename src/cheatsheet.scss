@@ -285,10 +285,20 @@ body {
   position: absolute;
   background: #fff;
   border-radius: 50px;
-  pointer-events: none;
+  border: 0;
+  padding: 0;
+  appearance: none;
+  cursor: pointer;
+  pointer-events: auto;
   // Soft glow
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  filter: blur(2px);
+  transform-origin: center;
+  will-change: transform, opacity, filter;
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.75);
+    outline-offset: 8px;
+  }
 
   &::before,
   &::after {
@@ -297,6 +307,14 @@ body {
     background: #fff;
     border-radius: 50%;
   }
+}
+
+.cloud-poofing {
+  pointer-events: none;
+}
+
+.cloud-materializing {
+  pointer-events: none;
 }
 
 .cloud-v1 {
